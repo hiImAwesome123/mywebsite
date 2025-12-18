@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Affordable Enterprises LLC</title>
+
+  <!-- Eye-catching font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
   <style>
     /* General Reset */
     * {
@@ -15,6 +19,8 @@
     body {
       font-family: Arial, sans-serif;
       line-height: 1.6;
+      background: #fafafa;
+      color: #222;
     }
 
     /* Fullscreen Hero Section */
@@ -25,20 +31,27 @@
       justify-content: center;
       color: white;
       text-align: center;
+      position: relative;
     }
 
     .hero h1 {
       font-size: 4.2rem;
+      text-shadow: 0 6px 20px rgba(0,0,0,0.6);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 0 20px;
     }
 
     /* Sticky Navigation */
     nav {
       position: sticky;
       top: 0;
-      background: #333;
+      background: rgba(51,51,51,0.95);
       padding: 10px 0;
       text-align: center;
       width: 100%;
+      z-index: 50;
     }
 
     nav a {
@@ -46,6 +59,8 @@
       margin: 0 15px;
       text-decoration: none;
       font-size: 1rem;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
     }
 
     nav a:hover {
@@ -55,7 +70,7 @@
     /* Sections */
     section {
       padding: 50px 20px;
-      min-height: 100vh;
+      min-height: 60vh;
     }
 
     .placeholder {
@@ -67,6 +82,7 @@
       font-size: 1.2rem;
       margin-bottom: 20px;
       border-radius: 8px;
+      color: #333;
     }
 
     section:nth-child(odd) {
@@ -82,9 +98,172 @@
       color: white;
       text-align: center;
       padding: 20px;
+      font-family: 'Poppins', sans-serif;
     }
 
-    /* Mobile Adjustments */
+    /* Grid layouts for photos & videos - side by side on wider screens */
+    .grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .grid .placeholder,
+    .grid .photo,
+    .grid .video-placeholder {
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #222;
+    }
+
+    /* Photos: show 3 across on wide, 2 on medium, 1 on small */
+    .photos-grid .placeholder,
+    .photos-grid .photo {
+      flex: 1 1 calc(33.333% - 40px);
+      min-width: 220px;
+      max-width: 420px;
+      height: 260px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Videos: show 2 across on wide, 2 or 1 on small */
+    .videos-grid .placeholder,
+    .videos-grid .video-placeholder {
+      flex: 1 1 calc(45% - 40px);
+      min-width: 260px;
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Contact section styling - centered and eye-catching */
+    #contact {
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      color: #111;
+      background: linear-gradient(120deg, #fff7f0 0%, #f1fbff 100%);
+      padding: 60px 20px;
+    }
+
+    #contact h2 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      font-weight: 800;
+      color: #0b3d91;
+      text-shadow: 0 4px 18px rgba(11,61,145,0.12);
+    }
+
+    .contact-details {
+      margin-top: 20px;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #222;
+      line-height: 2.2;
+    }
+
+    .contact-details a {
+      color: #0b3d91;
+      text-decoration: none;
+    }
+
+    /* Modal (popup) to collect name/email/phone on load */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    .modal {
+      background: white;
+      max-width: 480px;
+      width: 92%;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .modal h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #0b3d91;
+      font-weight: 700;
+    }
+
+    .modal p {
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    .modal label {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    .modal input[type="text"],
+    .modal input[type="email"],
+    .modal input[type="tel"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .modal .actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+
+    .btn {
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-primary {
+      background: #0b3d91;
+      color: white;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #0b3d91;
+      border: 2px solid #0b3d91;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .photos-grid .placeholder,
+      .photos-grid .photo {
+        flex: 1 1 calc(45% - 40px);
+      }
+    }
+
     @media (max-width: 768px) {
       .hero h1 {
         font-size: 1.8rem;
@@ -97,6 +276,15 @@
       .placeholder {
         height: 200px;
         font-size: 1rem;
+      }
+
+      .videos-grid .placeholder,
+      .videos-grid .video-placeholder {
+        flex: 1 1 100%;
+      }
+
+      .modal {
+        padding: 18px;
       }
     }
   </style>
@@ -142,34 +330,147 @@
   <p><strong>At the end of the day, our promise is simple:</strong> we get the job done, and we get it done right.</p>
 </section>
 
-  <!-- Photos Placeholder Section -->
+  <!-- Photos Section - now side-by-side -->
   <section id="photos">
-    <h2>Photos</h2>
-    <div class="placeholder">Photo placeholder 1</div>
-    <div class="placeholder">Photo placeholder 2</div>
-    <div class="placeholder">Photo placeholder 3</div>
-    <!-- Add more divs or replace these placeholders with real photos -->
+    <h2 style="text-align:center; margin-bottom:20px; font-family:'Poppins',sans-serif;">Photos</h2>
+    <div class="photos-grid grid">
+      <!-- Example image blocks. Replace background-image URLs with your real photos -->
+      <div class="photo" style="background-image: url('https://i.ibb.co/RG49Jk45/IMG-3772.jpg');"></div>
+      <div class="photo" style="background-image: url('https://i.ibb.co/bM9bzLfD/IMG-3776.jpg');"></div>
+      <div class="photo" style="background-image: url('https://i.ibb.co/xqxcQNWj/IMG-3775.jpg');"></div>
+      <!-- Add more .photo divs as needed; they will wrap responsively -->
+    </div>
   </section>
 
-  <!-- Videos Placeholder Section -->
+  <!-- Videos Section - side-by-side placeholders -->
   <section id="videos">
-    <h2>Videos</h2>
-    <div class="placeholder">Video placeholder 1</div>
-    <div class="placeholder">Video placeholder 2</div>
-    <!-- Replace these placeholders with embedded videos -->
+    <h2 style="text-align:center; margin-bottom:20px; font-family:'Poppins',sans-serif;">Videos</h2>
+    <div class="videos-grid grid">
+      <!-- Example video placeholders. Replace with <iframe> embeds for real videos -->
+      <div class="video-placeholder placeholder">Video placeholder 1</div>
+      <div class="video-placeholder placeholder">Video placeholder 2</div>
+      <!-- They will sit next to each other on wide screens and wrap on small screens -->
+    </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact Section (centered, large, eye-catching font) -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>📍 CT</p>
-    <p>📞 (860) 365-1092</p>
-    <p>📧 Your Email Address</p>
+
+    <div class="contact-details" aria-live="polite">
+      <p>📍 CT</p>
+      <p>📞 (860) 365-1092</p>
+      <p>📧 <a href="mailto:affordableenterprisellc@yahoo.com">affordableenterprisellc@yahoo.com</a></p>
+    </div>
   </section>
 
   <!-- Footer -->
   <footer>
     <p>&copy; 2026 Affordable Enterprises LLC | All Rights Reserved</p>
   </footer>
+
+  <!-- Modal: prompt to collect name, email, phone on load -->
+  <div id="leadModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+    <div class="modal" role="document">
+      <h3 id="leadModalTitle">Interested in Working With Us?</h3>
+      <p>Leave your name, email, and phone and we'll get back to you quickly.</p>
+
+      <form id="leadForm">
+        <label for="leadName">Full name</label>
+        <input id="leadName" name="name" type="text" placeholder="Jane Doe" required />
+
+        <label for="leadEmail">Email</label>
+        <input id="leadEmail" name="email" type="email" placeholder="you@example.com" required />
+
+        <label for="leadPhone">Phone</label>
+        <input id="leadPhone" name="phone" type="tel" placeholder="(860) 555-1234" required />
+
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" id="leadDismiss">Not now</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+
+      <p id="leadThanks" style="display:none; margin-top:12px; color:green;">Thanks! We'll be in touch shortly.</p>
+    </div>
+  </div>
+
+  <script>
+    // Show the modal when page loads (only once per session)
+    (function() {
+      const modal = document.getElementById('leadModal');
+      const form = document.getElementById('leadForm');
+      const dismiss = document.getElementById('leadDismiss');
+      const thanks = document.getElementById('leadThanks');
+
+      function showModal() {
+        modal.style.display = 'flex';
+        // focus first field for accessibility
+        setTimeout(() => {
+          document.getElementById('leadName').focus();
+        }, 50);
+      }
+
+      function hideModal() {
+        modal.style.display = 'none';
+      }
+
+      // Only show if not already shown this session
+      if (!sessionStorage.getItem('leadModalShown')) {
+        // slight delay so hero/nav finish rendering
+        window.addEventListener('load', function() {
+          setTimeout(showModal, 500);
+        });
+        sessionStorage.setItem('leadModalShown', '1');
+      }
+
+      dismiss.addEventListener('click', function() {
+        hideModal();
+      });
+
+      // Basic validation and handling
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('leadName').value.trim();
+        const email = document.getElementById('leadEmail').value.trim();
+        const phone = document.getElementById('leadPhone').value.trim();
+
+        if (!name || !email || !phone) {
+          alert('Please provide your name, email, and phone.');
+          return;
+        }
+
+        // Store locally (so you can later review if you add a backend)
+        let leads = JSON.parse(localStorage.getItem('ae_leads') || '[]');
+        leads.push({ name, email, phone, time: new Date().toISOString() });
+        localStorage.setItem('ae_leads', JSON.stringify(leads));
+
+        // Open user's email client pre-filled (optional) so they have a record and you receive an email.
+        const subject = encodeURIComponent('Work Inquiry from ' + name);
+        const body = encodeURIComponent('Name: ' + name + '\\nEmail: ' + email + '\\nPhone: ' + phone + '\\n\\nPlease reply with availability and details.');
+        const mailto = 'mailto:affordableenterprisellc@yahoo.com?subject=' + subject + '&body=' + body;
+
+        // Try to open mailto (this will open user's email client)
+        try {
+          window.location.href = mailto;
+        } catch (err) {
+          // ignore if blocked
+        }
+
+        // Give user feedback and close modal after a moment
+        thanks.style.display = 'block';
+        setTimeout(() => {
+          hideModal();
+        }, 1000);
+      });
+
+      // Close modal if user clicks outside the dialog
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          hideModal();
+        }
+      });
+    })();
+  </script>
 </body>
 </html>
