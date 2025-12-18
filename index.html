@@ -3,104 +3,154 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Excavation Business</title>
+  <title>Responsive Website</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
+    /* General Reset */
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
       line-height: 1.6;
     }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 20px 0;
+
+    /* Fullscreen Hero Section */
+    .hero {
+      height: 100vh; /* Full window height */
+      background: url('#') no-repeat center center/cover; /* Replace # with your machine picture URL */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
       text-align: center;
     }
+
+    .hero h1 {
+      font-size: 2.4rem;
+    }
+
+    /* Sticky Navigation */
     nav {
-      background: #444;
-      padding: 10px;
+      position: sticky;
+      top: 0;
+      background: #333;
+      padding: 10px 0;
       text-align: center;
+      width: 100%;
     }
+
     nav a {
-      color: #fff;
+      color: white;
       margin: 0 15px;
       text-decoration: none;
+      font-size: 1rem;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
+    /* Sections */
     section {
-      padding: 20px;
+      padding: 50px 20px;
+      min-height: 100vh;
     }
-    .services {
+
+    .placeholder {
+      height: 300px;
+      background: #ccc;
       display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      border-radius: 8px;
     }
-    .service {
-      flex: 1 1 250px;
+
+    section:nth-child(odd) {
       background: #f4f4f4;
-      padding: 15px;
-      border-radius: 5px;
     }
+
+    section:nth-child(even) {
+      background: #e8e8e8;
+    }
+
     footer {
       background: #333;
-      color: #fff;
+      color: white;
       text-align: center;
-      padding: 15px;
-      margin-top: 20px;
+      padding: 20px;
+    }
+
+    /* Mobile Adjustments */
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+      }
+
+      .placeholder {
+        height: 200px;
+        font-size: 1rem;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Excavation Experts LLC</h1>
-    <p>Reliable excavation services for residential and commercial projects</p>
-  </header>
+  <!-- Hero Section with Background Image -->
+  <section class="hero">
+    <h1>Welcome to My Website</h1>
+    <p>Replace this background with a picture of your machine.</p>
+  </section>
 
+  <!-- Sticky Navigation -->
   <nav>
     <a href="#about">About</a>
-    <a href="#services">Services</a>
+    <a href="#photos">Photos</a>
+    <a href="#videos">Videos</a>
     <a href="#contact">Contact</a>
   </nav>
 
+  <!-- About Section -->
   <section id="about">
     <h2>About Us</h2>
-    <p>We are a trusted excavation company serving Connecticut and New York. With years of experience, modern equipment, and a dedicated team, we deliver safe and efficient excavation solutions for all types of projects.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this text with details about your business.</p>
   </section>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="services">
-      <div class="service">
-        <h3>Site Preparation</h3>
-        <p>Clearing and grading land for construction projects.</p>
-      </div>
-      <div class="service">
-        <h3>Foundation Excavation</h3>
-        <p>Digging foundations for homes, businesses, and industrial buildings.</p>
-      </div>
-      <div class="service">
-        <h3>Utility Installation</h3>
-        <p>Trenching for water, sewer, and electrical lines.</p>
-      </div>
-      <div class="service">
-        <h3>Demolition</h3>
-        <p>Safe removal of old structures and debris hauling.</p>
-      </div>
-    </div>
+  <!-- Photos Placeholder Section -->
+  <section id="photos">
+    <h2>Photos</h2>
+    <div class="placeholder">Photo placeholder 1</div>
+    <div class="placeholder">Photo placeholder 2</div>
+    <div class="placeholder">Photo placeholder 3</div>
+    <!-- Add more divs or replace these placeholders with real photos -->
   </section>
 
+  <!-- Videos Placeholder Section -->
+  <section id="videos">
+    <h2>Videos</h2>
+    <div class="placeholder">Video placeholder 1</div>
+    <div class="placeholder">Video placeholder 2</div>
+    <!-- Replace these placeholders with embedded videos -->
+  </section>
+
+  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Us</h2>
-    <p>📍 East Hampton, CT</p>
-    <p>📞 (123) 456-7890</p>
-    <p>📧 info@excavationexperts.com</p>
+    <p>📍 Your Address Here</p>
+    <p>📞 Your Phone Number</p>
+    <p>📧 Your Email Address</p>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Excavation Experts LLC | All Rights Reserved</p>
+    <p>&copy; 2025 Your Business Name | All Rights Reserved</p>
   </footer>
 </body>
 </html>
