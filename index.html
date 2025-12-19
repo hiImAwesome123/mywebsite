@@ -363,7 +363,7 @@
     <h2>Contact Us</h2>
 
     <div class="contact-details" aria-live="polite">
-      <p>📍 CT</p>
+      <p>📍 Centeral CT</p>
       <p>📞 (860) 365-1092</p>
       <p>📧 <a href="mailto:affordableenterprise@yahoo.com">affordableenterprise@yahoo.com</a></p>
     </div>
@@ -400,9 +400,9 @@
     </div>
   </div>
 
-  <script>
+   <script>
     // Show the modal when page loads (only once per session)
-    (function() {
+      (function() {
       const modal = document.getElementById('leadModal');
       const form = document.getElementById('leadForm');
       const dismiss = document.getElementById('leadDismiss');
@@ -424,7 +424,7 @@
       if (!sessionStorage.getItem('leadModalShown')) {
         // slight delay so hero/nav finish rendering
         window.addEventListener('load', function() {
-          setTimeout(showModal, 500);
+          setTimeout(showModal, 15000);
         });
         sessionStorage.setItem('leadModalShown', '1');
       }
