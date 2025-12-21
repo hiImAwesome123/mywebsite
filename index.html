@@ -293,8 +293,26 @@
 </head>
 <body>
   <!-- Hero Section with Background Image -->
-<section id="home" class="hero" style="font-family: 'Space Grotesk', sans-serif; background: url('https://i.postimg.cc/4xWpfNX0/IMG-0245.avif') no-repeat center center/cover;">
-    <h1>Affordable Enterprises LLC</h1>
+<section id="home" class="hero" 
+style="font-family: 'Space Grotesk', sans-serif; 
+background: url('https://i.postimg.cc/4xWpfNX0/IMG-0245.avif') no-repeat center center/cover;">
+
+  <h1>Affordable Enterprises LLC</h1>
+
+  <style>
+    /* Force desktop size */
+    #home h1 {
+      font-size: 4rem;
+    }
+
+    /* Force mobile size */
+    @media (max-width: 768px) {
+      #home h1 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+
 </section>
 
   <!-- Sticky Navigation -->
