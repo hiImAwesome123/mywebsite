@@ -1,1 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Affordable Enterprises LLC | Future</title>
+</head>
 
+<!-- Slide-Out Navigation + Top Bar -->
+<div class="top-bar">
+  <!-- ✅ Logo now sends user back to index.html -->
+  <a href="index.html">
+    <img id="navToggle" src="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png" alt="Logo" class="logo">
+  </a>
+
+  <!-- ✅ Popup hint -->
+  <div id="navHint" class="nav-hint">
+    ← Press this to go home!
+  </div>
+</div>
+<style>
+  /* Top bar */
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: rgba(51,51,51,0);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    z-index: 1000;
+  }
+
+  /* Logo */
+  .logo {
+    height: 45px;
+    width: auto;
+    cursor: pointer;
+  }
+
+  /* Popup hint */
+  .nav-hint {
+    margin-left: 15px;
+    background: #ffcc00;
+    color: #000;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    opacity: 0;
+    transform: translateY(-5px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    pointer-events: none;
+  }
+
+  .nav-hint.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.getElementById("sideNav");
+    const hint = document.getElementById("navHint");
+
+    // ✅ Clicking inside the menu closes it
+    nav.addEventListener("click", () => {
+      nav.style.left = "-260px";
+    });
+
+    // ✅ Show hint popup for 5 seconds
+    setTimeout(() => {
+      hint.classList.add("show");
+    }, 300);
+
+    setTimeout(() => {
+      hint.classList.remove("show");
+    }, 5300);
+  });
+</script>
