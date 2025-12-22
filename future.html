@@ -6,7 +6,7 @@
   <title>Affordable Enterprises LLC | Future</title>
 </head>
 
-<!-- Slide-Out Navigation + Top Bar -->
+<!-- Top Bar -->
 <div class="top-bar">
   <!-- ✅ Logo now sends user back to index.html -->
   <a href="index.html">
@@ -18,6 +18,7 @@
     ← Press this to go home!
   </div>
 </div>
+
 <style>
   /* Top bar */
   .top-bar {
@@ -60,18 +61,11 @@
     opacity: 1;
     transform: translateY(0);
   }
-
 </style>
 
 <script>
   document.addEventListener("DOMContentLoaded", () => {
-    const nav = document.getElementById("sideNav");
     const hint = document.getElementById("navHint");
-
-    // ✅ Clicking inside the menu closes it
-    nav.addEventListener("click", () => {
-      nav.style.left = "-260px";
-    });
 
     // ✅ Show hint popup for 5 seconds
     setTimeout(() => {
