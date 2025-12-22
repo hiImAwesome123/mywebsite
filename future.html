@@ -9,6 +9,81 @@
   <link rel="icon" type="image/png" href="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png">
 </head>
 
+  <!-- Fullscreen Cover -->
+<div id="enterCover" class="enter-cover">
+  <div class="enter-box">
+    <h1>Welcome</h1>
+    <p>Press ENTER to reveal what the future holds</p>
+    <button id="enterButton" class="enter-btn">ENTER</button>
+  </div>
+</div>
+
+<style>
+  /* Fullscreen cover */
+  .enter-cover {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000e6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(4px);
+  }
+
+  .enter-box {
+    text-align: center;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+  }
+
+  .enter-box h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+
+  .enter-box p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 25px;
+  }
+
+  .enter-btn {
+    padding: 12px 28px;
+    font-size: 1.2rem;
+    font-family: 'Poppins', sans-serif;
+    background: #ffcc00;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease;
+  }
+
+  .enter-btn:hover {
+    background: #e6b800;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cover = document.getElementById("enterCover");
+    const button = document.getElementById("enterButton");
+
+    button.addEventListener("click", () => {
+      cover.style.opacity = "0";
+      cover.style.pointerEvents = "none";
+      setTimeout(() => {
+        cover.style.display = "none";
+      }, 600);
+    });
+  });
+</script>
+  
 <!-- Top Bar -->
 <div class="top-bar">
   <a href="index.html">
@@ -21,13 +96,72 @@
 </div>
 
 <!-- Main Content -->
-<div class="construction-container">
-  <h1>🚧 Under Construction 🚧</h1>
-  <p>We're working hard to bring you something amazing.</p>
+<div class="pool-container">
+  <h1>DIY Fiberglass Swimming Pools</h1>
+  <p class="subtitle">Save thousands by installing your own fiberglass pool with confidence.</p>
 
-  <div class="loader"></div>
+  <section class="content-section">
+    <h2>Why Choose a Fiberglass Pool?</h2>
+    <p>
+      Fiberglass pools are one of the most durable, low‑maintenance, and cost‑effective pool options available today.
+      They arrive as a single molded shell, ready to be set into the ground — making them perfect for DIY installation.
+    </p>
+  </section>
 
-  <p class="small-text">Check back soon for updates.</p>
+  <section class="content-section">
+    <h2>The DIY Advantage</h2>
+    <ul>
+      <li>Save $10,000–$30,000 in labor costs</li>
+      <li>Faster installation compared to concrete pools</li>
+      <li>No curing time — swim sooner</li>
+      <li>Smooth, non‑porous surface resists algae</li>
+      <li>Long‑lasting with minimal upkeep</li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2>What You Need to Get Started</h2>
+    <p>Installing a fiberglass pool is absolutely doable with the right tools and preparation. Here’s what most DIY installers use:</p>
+    <ul>
+      <li>Excavator or skid steer (we can help with this!)</li>
+      <li>Crushed stone or gravel base</li>
+      <li>Laser level for perfect grading</li>
+      <li>Plumbing supplies for returns and skimmer</li>
+      <li>Backfill material</li>
+      <li>Basic hand tools</li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2>How the Process Works</h2>
+    <ol>
+      <li><strong>Choose your fiberglass shell</strong> — size, shape, and features.</li>
+      <li><strong>Excavate the pool area</strong> — dig to the manufacturer’s specs.</li>
+      <li><strong>Set the gravel base</strong> — level and compact.</li>
+      <li><strong>Lower the pool shell</strong> — crane or equipment required.</li>
+      <li><strong>Level the shell</strong> — adjust until perfect.</li>
+      <li><strong>Plumb the system</strong> — returns, skimmer, pump.</li>
+      <li><strong>Backfill and fill with water</strong> — simultaneously for stability.</li>
+      <li><strong>Finish the patio</strong> — concrete, pavers, or decking.</li>
+    </ol>
+  </section>
+
+  <section class="content-section">
+    <h2>Need Help With the Heavy Lifting?</h2>
+    <p>
+      Affordable Enterprises LLC specializes in excavation and site prep — the hardest part of the job.
+      Whether you need a hole dug, a shell set, or grading done, we can handle the heavy equipment work
+      while you complete the DIY installation and save big.
+    </p>
+  </section>
+
+  <section class="content-section">
+    <h2>Ready to Start Your DIY Pool Project?</h2>
+    <p>
+      Reach out today for guidance, excavation services, or help planning your fiberglass pool installation.
+      DIY doesn’t mean doing it alone — we’re here to make the process smooth, safe, and affordable.
+    </p>
+  </section>
 </div>
 
 <style>
@@ -37,7 +171,6 @@
     background: #1a1a1a;
     color: white;
     font-family: 'Poppins', sans-serif;
-    text-align: center;
   }
 
   /* Top bar */
@@ -80,40 +213,44 @@
     transform: translateY(0);
   }
 
-  /* Under Construction Content */
-  .construction-container {
-    margin-top: 140px;
+  /* Page content */
+  .pool-container {
+    max-width: 900px;
+    margin: 120px auto 60px;
+    padding: 0 20px;
+    text-align: left;
   }
 
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.6rem;
     margin-bottom: 10px;
+    text-align: center;
   }
 
-  p {
+  .subtitle {
+    text-align: center;
     font-size: 1.2rem;
+    opacity: 0.8;
+    margin-bottom: 40px;
   }
 
-  .small-text {
-    margin-top: 15px;
-    font-size: 0.9rem;
-    opacity: 0.7;
+  .content-section {
+    margin-bottom: 40px;
   }
 
-  /* Loader Animation */
-  .loader {
-    margin: 30px auto;
-    border: 6px solid #444;
-    border-top: 6px solid #ffcc00;
-    border-radius: 50%;
-    width: 55px;
-    height: 55px;
-    animation: spin 1s linear infinite;
+  h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #ffcc00;
   }
 
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  p, li {
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+
+  ul, ol {
+    margin-left: 20px;
   }
 </style>
 
