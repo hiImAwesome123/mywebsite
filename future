@@ -13,7 +13,7 @@
 <!-- Top Bar -->
 <div class="top-bar">
   <!-- ✅ Logo now sends user back to index.html -->
-  <a href="index.html">
+  <a href="index">
     <img id="navToggle" src="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png" alt="Logo" class="logo">
   </a>
 
