@@ -322,27 +322,83 @@
 
 </section>
 
-<!-- Sticky Navigation -->
-<nav style="display:flex; align-items:center; gap:20px; padding:10px 20px; background:rgba(51,51,51,0.95);">
+<!-- Slide-Out Navigation + Top Bar -->
+<div class="top-bar">
+  <img id="navToggle" src="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png" alt="Logo" class="logo">
+</div>
 
-  <!-- ✅ Clickable logo that returns home -->
-  <a href="index.html" style="display:flex; align-items:center;">
-    <img src="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png" 
-         alt="Logo"
-         style="height:45px; width:auto; cursor:pointer;">
-  </a>
+<div id="sideNav" class="side-nav">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#professional-advice">Professional Advice</a>
+  <a href="#photos">Photos</a>
+  <a href="#contact">Contact</a>
+  <a href="future.html" target="_blank">Future</a>
+</div>
 
-  <!-- ✅ Your existing nav links -->
-  <div style="margin-left:auto;">
-    <a href="#home" style="color:white; margin:0 15px; text-decoration:none; font-weight:600;">Home</a>
-    <a href="#about" style="color:white; margin:0 15px; text-decoration:none; font-weight:600;">About</a>
-    <a href="#professional-advice" style="color:white; margin:0 15px; text-decoration:none; font-weight:600;">Professional Advice</a>
-    <a href="#photos" style="color:white; margin:0 15px; text-decoration:none; font-weight:600;">Photos</a>
-    <a href="#contact" style="color:white; margin:0 15px; text-decoration:none; font-weight:600;">Contact</a>
-    <a href="future.html" target="_blank" style="color:white; margin:0 15px; text-decoration:none; font-weight:600;">Future</a>
-  </div>
+<style>
+  /* Top bar */
+  .top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 65px;
+    background: rgba(51,51,51,0.95);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    z-index: 1000;
+  }
 
-</nav>
+  /* Logo toggle */
+  .logo {
+    height: 45px;
+    width: auto;
+    cursor: pointer;
+  }
+
+  /* Slide-out nav */
+  .side-nav {
+    position: fixed;
+    top: 0;
+    left: -260px; /* Hidden by default */
+    width: 260px;
+    height: 100%;
+    background: #333;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    transition: left 0.35s ease;
+    z-index: 999;
+  }
+
+  .side-nav a {
+    color: white;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1rem;
+    padding: 10px 25px;
+    display: block;
+  }
+
+  .side-nav a:hover {
+    background: rgba(255,255,255,0.1);
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.getElementById("sideNav");
+    const toggle = document.getElementById("navToggle");
+
+    toggle.addEventListener("click", () => {
+      const isOpen = nav.style.left === "0px";
+      nav.style.left = isOpen ? "-260px" : "0px";
+    });
+  });
+</script>
 
 
  <!-- About Section -->
