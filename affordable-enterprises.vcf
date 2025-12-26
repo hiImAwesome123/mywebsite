@@ -1,11 +1,12 @@
-/* Contact info for phones to save and use for other uses */
 BEGIN:VCARD
 VERSION:3.0
 N:Affordable Enterprises LLC;;;;
 FN:Affordable Enterprises LLC
 ORG:Affordable Enterprises LLC
 TEL;TYPE=work,voice:(860) 365-1092
-EMAIL:affordableenterprise@yahoo.com
+EMAIL;TYPE=work:affordableenterprise@yahoo.com
 URL:https://www.affordableenterprisesllc.com
 ADR;TYPE=WORK:;;Central, CT;;;
+PHOTO;VALUE=URI:https://i.postimg.cc/TP3HtrM7/excavatorlogo.png
+NOTE:Call or text us for excavation, septic repair and expansions!
 END:VCARD
