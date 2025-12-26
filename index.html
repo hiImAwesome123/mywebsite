@@ -446,7 +446,8 @@
 </script>
 
    <!-- Savable contact info file -->
-<a href="https://www.affordableenterprisesllc.com/affordable-enterprises.vcf" class="floating-contact-btn">
+<a href="https://www.affordableenterprisesllc.com/affordable-enterprises.vcf" 
+   class="floating-contact-btn" id="contactBtn">
   Add Contact
 </a>
 
@@ -465,15 +466,18 @@
     text-decoration: none;
     cursor: pointer;
     z-index: 1500;
-    transition: 0.3s ease;
-
-    /* 🔥 Subtle pulse animation with delay */
-    animation: pulse 2.2s ease-in-out infinite;
-    animation-delay: 3.3s; /* ⬅️ Delay before pulse starts */
+    opacity: 0;                 /* Hidden at first */
+    pointer-events: none;       /* Not clickable until shown */
+    transition: opacity 0.6s ease;
   }
 
-  .floating-contact-btn:hover {
-    background: #e6b800;
+  /* When revealed */
+  .floating-contact-btn.show {
+    opacity: 1;
+    pointer-events: auto;
+
+    /* Pulse animation starts only after it appears */
+    animation: pulse 2.2s ease-in-out infinite;
   }
 
   @keyframes pulse {
@@ -491,6 +495,17 @@
     }
   }
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("contactBtn");
+
+    // Show the button after 3300ms
+    setTimeout(() => {
+      btn.classList.add("show");
+    }, 3300);
+  });
+</script>
   
  <!-- About Section -->
 <section id="about" style="background: url('https://i.postimg.cc/8kvdRSbj/IMG-0244.avif') no-repeat center center/cover; font-size: 28px; color: white; text-align: center; padding: 30px; -webkit-text-stroke: 1px black;">
