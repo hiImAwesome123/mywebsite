@@ -618,56 +618,91 @@ style="
 </section>
   
 <!-- Professional Advice Section -->
-<section id="professional-advice" style="padding:40px 0;">
-  <h2 style="text-align:center; margin-bottom:20px; font-family:'Poppins',sans-serif;">
+<section id="professional-advice" style="padding:60px 0; background:#f9f9f9;">
+  <h2 style="
+    text-align:center;
+    margin-bottom:35px;
+    font-family:'Poppins',sans-serif;
+    font-size:2.6rem;
+    font-weight:800;
+    color:#0b3d91;
+    text-shadow:0 3px 12px rgba(0,0,0,0.1);
+  ">
     Professional Advice
   </h2>
 
-  <div class="advice-grid" style="
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-      gap:20px;
-      max-width:1000px;
-      margin:0 auto;
-      font-family:'Poppins',sans-serif;
-  ">
-    <div class="advice-card" style="
-        background:#f7f7f7;
-        padding:20px;
-        border-radius:8px;
-        box-shadow:0 2px 6px rgba(0,0,0,0.1);
-    ">
-      <h3 style="text-align:center"; style="margin-bottom:10px;">Expert Insight</h3>
+  <div class="advice-grid">
+    <div class="advice-card">
+      <h3>Expert Insight</h3>
       <p>
         Get clear, actionable guidance tailored to your project needs. Whether you're planning a major excavation or optimizing workflow, our expertise helps you make confident decisions.
       </p>
     </div>
 
-    <div class="advice-card" style="
-        background:#f7f7f7;
-        padding:20px;
-        border-radius:8px;
-        box-shadow:0 2px 6px rgba(0,0,0,0.1);
-    ">
-      <h3 style="text-align:center"; style="margin-bottom:10px;">Project Planning</h3>
+    <div class="advice-card">
+      <h3>Project Planning</h3>
       <p>
         Understand timelines, budgeting, and best practices before breaking ground. We help you map out each step to ensure efficiency and long‑term success.
       </p>
     </div>
 
-    <div class="advice-card" style="
-        background:#f7f7f7;
-        padding:20px;
-        border-radius:8px;
-        box-shadow:0 2px 6px rgba(0,0,0,0.1);
-    ">
-      <h3 style="text-align:center"; style="margin-bottom:10px;">Professional Recommendations</h3>
+    <div class="advice-card">
+      <h3>Professional Recommendations</h3>
       <p>
         Receive honest, experience‑backed recommendations on equipment, materials, and strategies that maximize value and minimize risk.
       </p>
     </div>
   </div>
 </section>
+
+<style>
+  .advice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .advice-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    transition: all 0.35s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+
+  .advice-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+    border-color: #ffcc00;
+  }
+
+  .advice-card h3 {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0b3d91;
+  }
+
+  .advice-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+
+  /* Mobile polish */
+  @media (max-width: 600px) {
+    .advice-card:hover {
+      transform: scale(1.02);
+    }
+  }
+</style>
   
   <!-- Photos Section - now side-by-side -->
   <section id="photos">
