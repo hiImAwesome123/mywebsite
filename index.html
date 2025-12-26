@@ -851,67 +851,47 @@ style="
 
   <div class="contact-details" aria-live="polite">
     <p>📍 Central CT</p>
-
-    <p>
-      📲 <a href="tel:8603651092" class="contact-link">(860) 365-1092</a>
-    </p>
-
-    <p>
-      📧 <a href="mailto:affordableenterprise@yahoo.com" class="contact-link">
-        affordableenterprise@yahoo.com
-      </a>
-    </p>
+    <p>📲 <a href="tel:8603651092" class="contact-link">(860) 365-1092</a></p>
+    <p>📧 <a href="mailto:affordableenterprise@yahoo.com" class="contact-link">
+      affordableenterprise@yahoo.com
+    </a></p>
   </div>
 </section>
 
 <style>
-  /* Contact Section Styling */
   .contact-section {
     text-align: center;
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(120deg, #fff7f0 0%, #f1fbff 100%);
-    padding: 25px 10px; /* MUCH smaller padding */
-    opacity: 0;
-    transform: translateY(15px); /* smaller animation */
-    transition: all 0.45s ease;
-  }
-
-  /* Reveal animation when in view */
-  .contact-section.in-view {
-    opacity: 1;
-    transform: translateY(0);
+    background: #ffffff; /* clean white, no gradient */
+    padding: 20px 10px; /* very compact */
+    border-top: 3px solid #ffcc00; /* clean separation from above */
   }
 
   .contact-section h2 {
-    font-size: 2rem; /* smaller */
-    margin: 0 0 8px 0; /* almost no spacing */
+    font-size: 1.9rem;
+    margin: 0 0 8px 0;
     font-weight: 800;
     color: #0b3d91;
   }
 
   .contact-details {
-    margin-top: 5px; /* reduced */
     font-size: 1.05rem;
     font-weight: 600;
     color: #222;
-    line-height: 1.6; /* tighter spacing */
+    line-height: 1.6;
   }
 
   .contact-details p {
-    margin: 4px 0; /* remove big default margins */
+    margin: 4px 0;
   }
 
-  /* Contact links */
   .contact-link {
     color: #0b3d91;
     text-decoration: none;
     font-weight: 700;
     position: relative;
-    padding-bottom: 1px;
-    transition: color 0.3s ease;
   }
 
-  /* Gold underline animation */
   .contact-link::after {
     content: "";
     position: absolute;
@@ -921,34 +901,12 @@ style="
     height: 2px;
     background: #ffcc00;
     transition: width 0.3s ease;
-    border-radius: 2px;
-  }
-
-  .contact-link:hover {
-    color: #e6b800;
   }
 
   .contact-link:hover::after {
     width: 100%;
   }
 </style>
-
-<script>
-  // Reveal animation when section enters view
-  document.addEventListener("DOMContentLoaded", () => {
-    const contactSection = document.querySelector(".contact-section");
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          contactSection.classList.add("in-view");
-        }
-      });
-    }, { threshold: 0.2 });
-
-    observer.observe(contactSection);
-  });
-</script>
   
   <!-- Footer -->
 <footer>
