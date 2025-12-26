@@ -674,12 +674,25 @@ style="
     transition: all 0.35s ease;
     cursor: pointer;
     border: 2px solid transparent;
+
+    /* Start hidden for mobile animation */
+    opacity: 0;
+    transform: translateY(20px);
   }
 
-  .advice-card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-    border-color: #ffcc00;
+  /* Desktop hover effect */
+  @media (hover: hover) {
+    .advice-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+      border-color: #ffcc00;
+    }
+  }
+
+  /* Mobile + desktop "in-view" animation */
+  .advice-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .advice-card h3 {
@@ -695,31 +708,143 @@ style="
     line-height: 1.6;
     color: #333;
   }
+</style>
 
-  /* Mobile polish */
-  @media (max-width: 600px) {
-    .advice-card:hover {
-      transform: scale(1.02);
+<script>
+  // Intersection Observer for mobile + desktop reveal animation
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".advice-card");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+        }
+      });
+    }, { threshold: 0.3 });
+
+    cards.forEach(card => observer.observe(card));
+  });
+</script>
+  
+  <!-- Photos Section -->
+<section id="photos" style="padding:60px 0; background:#ffffff;">
+  <h2 style="
+    text-align:center;
+    margin-bottom:35px;
+    font-family:'Poppins',sans-serif;
+    font-size:2.6rem;
+    font-weight:800;
+    color:#0b3d91;
+    text-shadow:0 3px 12px rgba(0,0,0,0.1);
+  ">
+    Photos
+  </h2>
+
+  <div class="photos-grid">
+    <div class="photo" style="background-image:url('https://i.ibb.co/RG49Jk45/IMG-3772.jpg');"></div>
+    <div class="photo" style="background-image:url('https://i.ibb.co/bM9bzLfD/IMG-3776.jpg');"></div>
+    <div class="photo" style="background-image:url('https://i.ibb.co/8nrhyY7T/IMG-8357.jpg');"></div>
+    <div class="photo" style="background-image:url('https://i.ibb.co/CKhyTxrf/IMG-8358.jpg');"></div>
+    <div class="photo" style="background-image:url('https://i.ibb.co/hRYwnksp/IMG-0241.avif');"></div>
+    <div class="photo" style="background-image:url('https://i.ibb.co/ynzvyn9B/IMG-0247.avif');"></div>
+    <div class="photo" style="background-image:url('https://i.ibb.co/KzbD687D/IMG-0250.avif');"></div>
+    <div class="photo" style="background-image:url('https://i.ibb.co/kYcvmr9/IMG-0251.avif');"></div>
+  </div>
+</section>
+
+<style>
+  .photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .photo {
+    width: 100%;
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: all 0.35s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  .photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25), 0 0 12px rgba(255,204,0,0.4);
+    border: 2px solid #ffcc00;
+  }
+
+  /* Fade-in animation */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
+
+  /* Lightbox overlay */
+  .lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .lightbox-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.3);
+  }
 </style>
-  
-  <!-- Photos Section - now side-by-side -->
-  <section id="photos">
-    <h2 style="text-align:center; margin-bottom:20px; font-family:'Poppins',sans-serif;">Photos</h2>
-    <div class="photos-grid grid">
-      <!-- Example image blocks. Replace background-image URLs with your real photos -->
-      <div class="photo" style="background-image: url('https://i.ibb.co/RG49Jk45/IMG-3772.jpg');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/bM9bzLfD/IMG-3776.jpg');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/8nrhyY7T/IMG-8357.jpg');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/CKhyTxrf/IMG-8358.jpg');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/hRYwnksp/IMG-0241.avif');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/ynzvyn9B/IMG-0247.avif');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/KzbD687D/IMG-0250.avif');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/kYcvmr9/IMG-0251.avif');"></div>
-      <!-- Add more .photo divs as needed; they will wrap responsively -->
-    </div>
-  </section>
+
+<script>
+  // Lightbox functionality
+  document.addEventListener("DOMContentLoaded", () => {
+    const photos = document.querySelectorAll(".photo");
+
+    // Create overlay
+    const overlay = document.createElement("div");
+    overlay.className = "lightbox-overlay";
+    overlay.innerHTML = `<img class="lightbox-image" src="">`;
+    document.body.appendChild(overlay);
+
+    const overlayImg = overlay.querySelector(".lightbox-image");
+
+    photos.forEach(photo => {
+      photo.addEventListener("click", () => {
+        const bg = photo.style.backgroundImage.slice(5, -2);
+        overlayImg.src = bg;
+        overlay.classList.add("show");
+      });
+    });
+
+    overlay.addEventListener("click", () => {
+      overlay.classList.remove("show");
+    });
+  });
+</script>
+   
   <!-- Contact Section (centered, large, eye-catching font) -->
   <section id="contact">
     <h2>Contact Us</h2>
