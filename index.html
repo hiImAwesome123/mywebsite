@@ -466,16 +466,16 @@
     cursor: pointer;
     z-index: 1500;
     transition: 0.3s ease;
-    
-    /* 🔥 Subtle pulse animation */
+
+    /* 🔥 Subtle pulse animation with delay */
     animation: pulse 2.2s ease-in-out infinite;
+    animation-delay: 3.3s; /* ⬅️ Delay before pulse starts */
   }
 
   .floating-contact-btn:hover {
     background: #e6b800;
   }
 
-  /* Pulse keyframes */
   @keyframes pulse {
     0% {
       transform: scale(1);
@@ -491,6 +491,7 @@
     }
   }
 </style>
+  
  <!-- About Section -->
 <section id="about" style="background: url('https://i.postimg.cc/8kvdRSbj/IMG-0244.avif') no-repeat center center/cover; font-size: 28px; color: white; text-align: center; padding: 30px; -webkit-text-stroke: 1px black;">
   <h2>About Us</h2>
