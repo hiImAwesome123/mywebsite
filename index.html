@@ -845,7 +845,7 @@ style="
   });
 </script>
    
-  <!-- Contact Section -->
+<!-- Contact Section -->
 <section id="contact" class="contact-section">
   <h2>Contact Us</h2>
 
@@ -870,10 +870,10 @@ style="
     text-align: center;
     font-family: 'Poppins', sans-serif;
     background: linear-gradient(120deg, #fff7f0 0%, #f1fbff 100%);
-    padding: 35px 20px; /* reduced padding */
+    padding: 25px 10px; /* MUCH smaller padding */
     opacity: 0;
-    transform: translateY(25px); /* smaller movement */
-    transition: all 0.6s ease;
+    transform: translateY(15px); /* smaller animation */
+    transition: all 0.45s ease;
   }
 
   /* Reveal animation when in view */
@@ -883,19 +883,22 @@ style="
   }
 
   .contact-section h2 {
-    font-size: 2.4rem; /* slightly smaller */
-    margin-bottom: 10px; /* reduced spacing */
+    font-size: 2rem; /* smaller */
+    margin: 0 0 8px 0; /* almost no spacing */
     font-weight: 800;
     color: #0b3d91;
-    text-shadow: 0 3px 12px rgba(11,61,145,0.12);
   }
 
   .contact-details {
-    margin-top: 10px;
-    font-size: 1.15rem; /* slightly smaller */
+    margin-top: 5px; /* reduced */
+    font-size: 1.05rem;
     font-weight: 600;
     color: #222;
-    line-height: 1.9; /* tighter spacing */
+    line-height: 1.6; /* tighter spacing */
+  }
+
+  .contact-details p {
+    margin: 4px 0; /* remove big default margins */
   }
 
   /* Contact links */
@@ -904,7 +907,7 @@ style="
     text-decoration: none;
     font-weight: 700;
     position: relative;
-    padding-bottom: 2px;
+    padding-bottom: 1px;
     transition: color 0.3s ease;
   }
 
@@ -913,7 +916,7 @@ style="
     content: "";
     position: absolute;
     left: 0;
-    bottom: -2px;
+    bottom: -1px;
     width: 0%;
     height: 2px;
     background: #ffcc00;
@@ -941,7 +944,7 @@ style="
           contactSection.classList.add("in-view");
         }
       });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.2 });
 
     observer.observe(contactSection);
   });
