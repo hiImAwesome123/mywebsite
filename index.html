@@ -845,39 +845,152 @@ style="
   });
 </script>
    
-  <!-- Contact Section (centered, large, eye-catching font) -->
-  <section id="contact">
-    <h2>Contact Us</h2>
+  <!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <h2>Contact Us</h2>
 
-    <div class="contact-details" aria-live="polite">
-  <p>📍 Central CT</p>
+  <div class="contact-details" aria-live="polite">
+    <p class="contact-item">📍 Central CT</p>
 
-  <!-- ✅ Click-to-call phone number -->
-  <p>📲 <a href="tel:8603651092" style="color:#0b3d91; text-decoration:none;">
-    (860) 365-1092
-  </a></p>
+    <p class="contact-item">
+      📲 <a href="tel:8603651092" class="contact-link">(860) 365-1092</a>
+    </p>
 
-  <!-- ✅ Email link -->
-  <p>📧 <a href="mailto:affordableenterprise@yahoo.com">
-    affordableenterprise@yahoo.com
-  </a></p>
+    <p class="contact-item">
+      📧 <a href="mailto:affordableenterprise@yahoo.com" class="contact-link">
+        affordableenterprise@yahoo.com
+      </a>
+    </p>
+  </div>
+</section>
 
+<style>
+  /* Contact Section Styling */
+  .contact-section {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #fff7f0 0%, #f1fbff 100%);
+    padding: 80px 20px;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+  }
+
+  /* Reveal animation when in view */
+  .contact-section.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .contact-section h2 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+    color: #0b3d91;
+    text-shadow: 0 4px 18px rgba(11,61,145,0.12);
+  }
+
+  .contact-details {
+    margin-top: 20px;
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #222;
+    line-height: 2.4;
+  }
+
+  .contact-item {
+    animation: pulseIcon 2.8s infinite ease-in-out;
+  }
+
+  /* Subtle icon pulse */
+  @keyframes pulseIcon {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.9; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+
+  /* Contact links */
+  .contact-link {
+    color: #0b3d91;
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 3px;
+    transition: color 0.3s ease;
+  }
+
+  /* Gold underline animation */
+  .contact-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0%;
+    height: 3px;
+    background: #ffcc00;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .contact-link:hover {
+    color: #e6b800;
+  }
+
+  .contact-link:hover::after {
+    width: 100%;
+  }
+</style>
+
+<script>
+  // Reveal animation when section enters view
+  document.addEventListener("DOMContentLoaded", () => {
+    const contactSection = document.querySelector(".contact-section");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          contactSection.classList.add("in-view");
+        }
+      });
+    }, { threshold: 0.3 });
+
+    observer.observe(contactSection);
+  });
+</script>
+  
   <!-- Footer -->
-  <footer>
-    
-    <style>
-      footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-family: 'Poppins', sans-serif;
-    }
-      
-    </style>
-    
-    <p>&copy; 2026 Affordable Enterprises LLC | All Rights Reserved</p>
-  </footer>
+<footer class="site-footer">
+  <p>&copy; 2026 Affordable Enterprises LLC | All Rights Reserved</p>
+</footer>
+
+<style>
+  .site-footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin-top: 60px; /* prevents merging with contact section */
+  }
+
+  /* Ensures footer sticks to bottom on short pages */
+  body, html {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .site-footer {
+    margin-top: auto;
+  }
+</style>
 
   <!-- Disabled 
   <div id="leadModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
