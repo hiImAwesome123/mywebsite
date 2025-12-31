@@ -437,35 +437,71 @@
   }
 
   /* Dark Mode Theme */
-  body.dark-mode {
-    background: #111 !important;
-    color: #e6e6e6 !important;
-  }
+/* 🌙 DARK MODE THEME */
+body.dark-mode {
+  background: #111 !important;
+  color: #e6e6e6 !important;
+}
 
-  body.dark-mode section {
-    background: #111 !important;
-    color: #e6e6e6 !important;
-  }
+/* Do NOT override sections with background images */
+body.dark-mode section {
+  color: #e6e6e6 !important;
+}
 
-  body.dark-mode h1,
-  body.dark-mode h2,
-  body.dark-mode h3 {
-    color: #ffcc00 !important;
-    text-shadow: none !important;
-  }
+/* Headings */
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3 {
+  color: #ffcc00 !important;
+  text-shadow: none !important;
+}
 
-  body.dark-mode nav,
-  body.dark-mode .side-nav {
-    background: rgba(20,20,20,0.95) !important;
-  }
+/* Navigation */
+body.dark-mode nav,
+body.dark-mode .side-nav {
+  background: rgba(20,20,20,0.95) !important;
+}
 
-  body.dark-mode .side-nav a {
-    color: #eee !important;
-  }
+body.dark-mode .side-nav a {
+  color: #eee !important;
+}
 
-  body.dark-mode .side-nav a:hover {
-    background: rgba(255,255,255,0.1) !important;
-  }
+body.dark-mode .side-nav a:hover {
+  background: rgba(255,255,255,0.1) !important;
+}
+
+/* Cards */
+body.dark-mode .advice-card {
+  background: #1a1a1a !important;
+  border-color: #333 !important;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.6) !important;
+}
+
+body.dark-mode .advice-card:hover {
+  border-color: #ffcc00 !important;
+}
+
+/* Photos */
+body.dark-mode .photo {
+  box-shadow: 0 4px 14px rgba(0,0,0,0.7) !important;
+}
+
+/* Contact section */
+body.dark-mode .contact-section {
+  background: #111 !important;
+  border-top: 3px solid #ffcc00 !important;
+}
+
+body.dark-mode .contact-link {
+  color: #ffcc00 !important;
+}
+
+/* Footer */
+body.dark-mode footer {
+  background: #000 !important;
+  color: #eee !important;
+  border-top: 3px solid #ffcc00 !important;
+}
 </style>
 
 <script>
