@@ -321,7 +321,7 @@
 <div class="top-bar">
   <img id="navToggle" src="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png" alt="Logo" class="logo">
 
-  <!-- ✅ Popup hint -->
+  <!-- Popup hint -->
   <div id="navHint" class="nav-hint">
     ← Press this for quick access!
   </div>
@@ -337,6 +337,9 @@
   <a href="#contact">Contact</a>
   <a href="future.html">Future</a>
 </div>
+
+<!-- 🌙 Dark Mode Toggle Button -->
+<button id="darkModeToggle" class="dark-toggle">🌙</button>
 
 <style>
   /* Top bar */
@@ -360,7 +363,7 @@
     cursor: pointer;
   }
 
-  /* ✅ Popup hint styling */
+  /* Popup hint styling */
   .nav-hint {
     margin-left: 15px;
     background: #ffcc00;
@@ -409,6 +412,60 @@
   .side-nav a:hover {
     background: rgba(255,255,255,0.1);
   }
+
+  /* 🌙 Dark Mode Toggle Button */
+  .dark-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #0b3d91;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 2000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .dark-toggle:hover {
+    background: #ffcc00;
+    color: #000;
+    transform: scale(1.05);
+  }
+
+  /* Dark Mode Theme */
+  body.dark-mode {
+    background: #111 !important;
+    color: #e6e6e6 !important;
+  }
+
+  body.dark-mode section {
+    background: #111 !important;
+    color: #e6e6e6 !important;
+  }
+
+  body.dark-mode h1,
+  body.dark-mode h2,
+  body.dark-mode h3 {
+    color: #ffcc00 !important;
+    text-shadow: none !important;
+  }
+
+  body.dark-mode nav,
+  body.dark-mode .side-nav {
+    background: rgba(20,20,20,0.95) !important;
+  }
+
+  body.dark-mode .side-nav a {
+    color: #eee !important;
+  }
+
+  body.dark-mode .side-nav a:hover {
+    background: rgba(255,255,255,0.1) !important;
+  }
 </style>
 
 <script>
@@ -416,6 +473,7 @@
     const nav = document.getElementById("sideNav");
     const toggle = document.getElementById("navToggle");
     const hint = document.getElementById("navHint");
+    const darkToggle = document.getElementById("darkModeToggle");
 
     function openNav() {
       nav.style.left = "0px";
@@ -436,17 +494,31 @@
       closeNav();
     });
 
-    // ✅ Show hint popup for 5 seconds
+    // Show hint popup
     setTimeout(() => {
       hint.classList.add("show");
-    }, 300); // slight delay for smoothness
+    }, 300);
 
     setTimeout(() => {
       hint.classList.remove("show");
-    }, 3300); // disappears after 5 seconds
+    }, 3300);
+
+    /* 🌙 DARK MODE SCRIPT */
+    if (localStorage.getItem("darkMode") === "enabled") {
+      document.body.classList.add("dark-mode");
+    }
+
+    darkToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("darkMode", "enabled");
+      } else {
+        localStorage.setItem("darkMode", "disabled");
+      }
+    });
   });
 </script>
-
    <!-- Savable contact info file -->
 <a href="https://www.affordableenterprisesllc.com/affordable-enterprises.vcf" 
    class="floating-contact-btn" id="contactBtn">
