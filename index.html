@@ -30,7 +30,9 @@
       background: #fafafa;
       color: #222;
     }
-
+body, html {
+  overflow-x: hidden;
+}
     /* Fullscreen Hero Section */
     .hero {
       height: 100vh; /* Full window height */
@@ -340,78 +342,89 @@
   <a href="bobcatservices.html">Bobcat Services</a>
   <a href="future.html">Future</a>
 </div>
-
+  
 <style>
-  /* Top bar */
-  .top-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 65px;
-    background: rgba(51,51,51,0);
-    display: flex;
-    align-items: center;
-    padding-left: 20px;
-    z-index: 1000;
-  }
+/* Prevent horizontal overflow on mobile */
+html, body {
+  overflow-x: hidden;
+}
 
-  /* Logo toggle */
-  .logo {
-    height: 45px;
-    width: auto;
-    cursor: pointer;
-  }
+/* Top bar */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background: rgba(51,51,51,0);
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  z-index: 1000;
+}
 
-  /* Popup hint styling */
-  .nav-hint {
-    margin-left: 15px;
-    background: #ffcc00;
-    color: #000;
-    padding: 6px 12px;
-    border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    opacity: 0;
-    transform: translateY(-5px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-    pointer-events: none;
-  }
+/* Logo toggle */
+.logo {
+  height: 45px;
+  width: auto;
+  cursor: pointer;
+}
 
-  .nav-hint.show {
-    opacity: 1;
-    transform: translateY(0);
-  }
+/* Popup hint styling */
+.nav-hint {
+  margin-left: 15px;
+  background: #ffcc00;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
 
-  /* Slide-out nav */
-  .side-nav {
-    position: fixed;
-    top: 0;
-    left: -260px;
-    width: 260px;
-    height: 100%;
-    background: #333;
-    padding-top: 80px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    transition: left 0.35s ease;
-    z-index: 999;
-  } 
+.nav-hint.show {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-  .side-nav a {
-    color: white;
-    text-decoration: none;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.1rem;
-    padding: 10px 25px;
-    display: block;
-  }
+/* Slide-out nav (FIXED VERSION) */
+.side-nav {
+  position: fixed;
+  top: 0;
+  width: 260px;
+  height: 100%;
+  background: #333;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 999;
 
-  .side-nav a:hover {
-    background: rgba(255,255,255,0.1);
-  }
+  /* FIX: use transform instead of left */
+  transform: translateX(-260px);
+  transition: transform 0.35s ease;
+}
+
+.side-nav.open {
+  transform: translateX(0);
+}
+
+.side-nav a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  padding: 10px 25px;
+  display: block;
+}
+
+.side-nav a:hover {
+  background: rgba(255,255,255,0.1);
+}
 </style>
 
 <script>
@@ -420,36 +433,26 @@
     const toggle = document.getElementById("navToggle");
     const hint = document.getElementById("navHint");
 
-    function openNav() {
-      nav.style.left = "0px";
-    }
-
-    function closeNav() {
-      nav.style.left = "-260px";
-    }
-
     // Toggle menu when clicking the logo
     toggle.addEventListener("click", () => {
-      const isOpen = nav.style.left === "0px";
-      isOpen ? closeNav() : openNav();
+      nav.classList.toggle("open");
     });
 
     // Close menu when clicking inside it
     nav.addEventListener("click", () => {
-      closeNav();
+      nav.classList.remove("open");
     });
 
-    // ✅ Show hint popup for 5 seconds
+    // Show hint popup for 5 seconds
     setTimeout(() => {
       hint.classList.add("show");
-    }, 300); // slight delay for smoothness
+    }, 300);
 
     setTimeout(() => {
       hint.classList.remove("show");
-    }, 3300); // disappears after 5 seconds
+    }, 3300);
   });
 </script>
-
    <!-- Savable contact info file -->
 <a href="https://www.affordableenterprisesllc.com/affordable-enterprises.vcf" 
    class="floating-contact-btn" id="contactBtn">
