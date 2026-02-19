@@ -295,7 +295,8 @@
   </style>
 </head>
 <body>
-  <!-- Hero Section with Background Image -->
+<!-- HERO SECTION (top banner) -->
+<!-- Displays company name over background image -->
 <section id="home" class="hero"
   style="background: url('https://i.postimg.cc/4xWpfNX0/IMG-0245.avif') no-repeat center center/cover;">
  
@@ -322,7 +323,7 @@
 <div class="top-bar">
   <img id="navToggle" src="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png" alt="Logo" class="logo">
 
-  <!-- ✅ Popup hint -->
+  <!-- Popup hint -->
   <div id="navHint" class="nav-hint">
     ← Press this for quick access!
   </div>
@@ -362,7 +363,7 @@
     cursor: pointer;
   }
 
-  /* ✅ Popup hint styling */
+  /* Popup hint styling */
   .nav-hint {
     margin-left: 15px;
     background: #ffcc00;
@@ -397,7 +398,7 @@
     gap: 20px;
     transition: left 0.35s ease;
     z-index: 999;
-  }
+  } 
 
   .side-nav a {
     color: white;
@@ -826,15 +827,56 @@ style="
   </h2>
 
   <div class="photos-grid">
+
+  <!-- Photo 1 -->
+  <div class="photo-item">
     <div class="photo" style="background-image:url('https://i.ibb.co/RG49Jk45/IMG-3772.jpg');"></div>
-    <div class="photo" style="background-image:url('https://i.ibb.co/bM9bzLfD/IMG-3776.jpg');"></div>
-    <div class="photo" style="background-image:url('https://i.ibb.co/8nrhyY7T/IMG-8357.jpg');"></div>
-    <div class="photo" style="background-image:url('https://i.ibb.co/CKhyTxrf/IMG-8358.jpg');"></div>
-    <div class="photo" style="background-image:url('https://i.ibb.co/hRYwnksp/IMG-0241.avif');"></div>
-    <div class="photo" style="background-image:url('https://i.ibb.co/ynzvyn9B/IMG-0247.avif');"></div>
-    <div class="photo" style="background-image:url('https://i.ibb.co/KzbD687D/IMG-0250.avif');"></div>
-    <div class="photo" style="background-image:url('https://i.ibb.co/kYcvmr9/IMG-0251.avif');"></div>
+    <p class="photo-desc">Before installation of D-Box</p>
   </div>
+
+  <!-- Photo 2 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/bM9bzLfD/IMG-3776.jpg');"></div>
+    <p class="photo-desc">After installation of D-Box</p>
+  </div>
+
+  <!-- Photo 3 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/8nrhyY7T/IMG-8357.jpg');"></div>
+    <p class="photo-desc">Leveling out the leaching field</p>
+  </div>
+
+  <!-- Photo 4 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/CKhyTxrf/IMG-8358.jpg');"></div>
+    <p class="photo-desc">Septic tank installation</p>
+  </div>
+
+  <!-- Photo 5 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/hRYwnksp/IMG-0241.avif');"></div>
+    <p class="photo-desc">Material removal - Top layer removed</p>
+  </div>
+
+  <!-- Photo 6 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/ynzvyn9B/IMG-0247.avif');"></div>
+    <p class="photo-desc">Material removal – Depth nearly at target grade </p>
+  </div>
+
+  <!-- Photo 7 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/KzbD687D/IMG-0250.avif');"></div>
+    <p class="photo-desc">Material removal - Ramp for access</p>
+  </div>
+
+  <!-- Photo 8 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/kYcvmr9/IMG-0251.avif');"></div>
+    <p class="photo-desc">Material removal - All material removed</p>
+  </div>
+
+</div> 
 </section>
 
 <style>
@@ -866,6 +908,7 @@ style="
     box-shadow: 0 10px 25px rgba(0,0,0,0.25), 0 0 12px rgba(255,204,0,0.4);
     border: 2px solid #ffcc00;
   }
+  
 
   /* Fade-in animation */
   @keyframes fadeInUp {
@@ -899,6 +942,20 @@ style="
     max-height: 90%;
     border-radius: 12px;
     box-shadow: 0 0 25px rgba(255,255,255,0.3);
+  }
+  <style>
+  .photo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photo-desc {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
   }
 </style>
 
