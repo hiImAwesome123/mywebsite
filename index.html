@@ -1,297 +1,478 @@
-<!doctype html>
-<html lang="en" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>HOME - Unaffordable Retardation</title>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="/_sdk/element_sdk.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Affordable Enterprises LLC</title>
+
+  <!-- Eye-catching font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Asimovian:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
+
   <style>
-        :root {
-            --primary-color: #2d5016;
-            --secondary-color: #f5f3f0;
-            --accent-color: #c9a961;
-            --text-color: #2c2c2c;
-            --light-text: #666666;
-        }
-       
-        body {
-            font-family: 'Georgia, serif', serif;
-            color: var(--text-color);
-        }
-       
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #1a3009 100%);
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-       
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-       
-        .service-card {
-            background: var(--secondary-color);
-            border-left: 5px solid var(--accent-color);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-       
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-       
-        .cta-button {
-            background: var(--accent-color);
-            color: var(--text-color);
-            font-weight: 600;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
-        }
-       
-        .cta-button:hover {
-            background: #b8935f;
-            transform: scale(1.05);
-        }
-       
-        .accent-text {
-            color: var(--accent-color);
-        }
-       
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-       
-        .fade-in {
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-       
-        .section-title {
-            position: relative;
-            display: inline-block;
-            padding-bottom: 12px;
-        }
-       
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 80px;
-            height: 3px;
-            background: var(--accent-color);
-        }
-    </style>
-  <style>body { box-sizing: border-box; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body class="h-full">
-  <div class="w-full h-full bg-white overflow-auto">
-   <!-- Navigation -->
-   <nav class="w-full bg-white shadow-sm sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-     <div class="text-2xl font-bold" style="color: var(--primary-color);">
-      <span id="nav-business-name">Unaffordable Retardation</span>
-     </div>
-     <div class="text-sm" style="color: var(--light-text);">
-      <span id="nav-tagline"> Business description </span>
-     </div>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: #fafafa;
+      color: #222;
+    }
+
+    /* Fullscreen Hero Section */
+    .hero {
+      height: 100vh; /* Full window height */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 4.2rem;
+      text-shadow: 0 6px 20px rgba(0,0,0,0.6);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 800;
+      letter-spacing: 1px;
+      padding: 0 20px;
+    }
+
+    /* Sticky Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(51,51,51,0.95);
+      padding: 10px 0;
+      text-align: center;
+      width: 100%;
+      z-index: 50;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    /* Sections */
+    section {
+      padding: 50px 20px;
+      min-height: 60vh;
+    }
+
+    .placeholder {
+      height: 300px;
+      background: #ccc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      color: #333;
+    }
+
+    section:nth-child(odd) {
+      background: #f4f4f4;
+    }
+
+    section:nth-child(even) {
+      background: #e8e8e8;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    /* Grid layouts for photos & videos - side by side on wider screens */
+    .grid {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .grid .placeholder,
+    .grid .photo,
+    .grid .video-placeholder {
+      border-radius: 8px;
+      overflow: hidden;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #222;
+    }
+
+    /* Photos: show 3 across on wide, 2 on medium, 1 on small */
+    .photos-grid .placeholder,
+    .photos-grid .photo {
+      flex: 1 1 calc(33.333% - 40px);
+      min-width: 220px;
+      max-width: 420px;
+      height: 260px;
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Videos: show 2 across on wide, 2 or 1 on small */
+    .videos-grid .placeholder,
+    .videos-grid .video-placeholder {
+      flex: 1 1 calc(45% - 40px);
+      min-width: 260px;
+      height: 220px;
+      background-size: cover;
+      background-position: center;
+    }
+ 
+    /* Contact section styling - centered and eye-catching */
+    #contact {
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      color: #111;
+      background: linear-gradient(120deg, #fff7f0 0%, #f1fbff 100%);
+      padding: 60px 20px;
+    }
+
+    #contact h2 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      font-weight: 800;
+      color: #0b3d91;
+      text-shadow: 0 4px 18px rgba(11,61,145,0.12);
+    }
+
+    .contact-details {
+      margin-top: 20px;
+      font-size: 1.0rem;
+      font-weight: 600;
+      color: #222;
+      line-height: 2.2;
+    }
+
+    .contact-details a {
+      color: #0b3d91;
+      text-decoration: none;
+    }
+
+    /* Modal (popup) to collect name/email/phone on load */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.55);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    .modal {
+      background: white;
+      max-width: 480px;
+      width: 92%;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .modal h3 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+      color: #0b3d91;
+      font-weight: 700;
+    }
+
+    .modal p {
+      margin-bottom: 16px;
+      color: #333;
+    }
+
+    .modal label {
+      display: block;
+      font-size: 0.95rem;
+      margin-bottom: 6px;
+      color: #333;
+    }
+
+    .modal input[type="text"],
+    .modal input[type="email"],
+    .modal input[type="tel"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      outline: none;
+    }
+
+    .modal .actions {
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+
+    .btn {
+      padding: 10px 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .btn-primary {
+      background: #0b3d91;
+      color: white;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: #0b3d91;
+      border: 2px solid #0b3d91;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 992px) {
+      .hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .photos-grid .placeholder,
+      .photos-grid .photo {
+        flex: 1 1 calc(45% - 40px);
+      }
+    }
+
+    @media (max-width: 768px) {
+    .hero h1 {
+        font-size: 4.2rem;
+        text-shadow: 0 6px 20px rgba(0,0,0,0.6);
+        font-family: 'Handlee', cursive; /* ← Forced font changer */
+        font-weight: 700;
+        letter-spacing: 1px;
+        padding: 0 20px;
+      }
+
+      nav a {
+        font-size: 0.9rem;
+      }
+
+      .placeholder {
+        height: 200px;
+        font-size: 1rem;
+      }
+
+      .videos-grid .placeholder,
+      .videos-grid .video-placeholder {
+        flex: 1 1 100%;
+      }
+
+      .modal {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Hero Section with Background Image -->
+<section id="home" class="hero"
+  style="background: url('https://i.postimg.cc/4xWpfNX0/IMG-0245.avif') no-repeat center center/cover;">
+ 
+  <h1>Affordable Enterprises LLC</h1>
+
+  <style>
+    /* Force desktop size */
+    #home h1 {
+      font-size: 4rem;
+    }
+
+    /* Force mobile size */
+    @media (max-width: 1000px) {
+      #home h1 {
+        font-size: 4.0rem;
+        font-family: 'Handlee', cursive;
+      }
+    }
+  </style>
+
+</section>
+
+  <!-- Sticky Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#professional-advice">Professional Advice</a>
+    <a href="#photos">Photos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+ <!-- About Section -->
+<section id="about" style="background: url('https://i.postimg.cc/8kvdRSbj/IMG-0244.avif') no-repeat center center/cover; font-size: 28px; color: white; text-align: center; padding: 30px; -webkit-text-stroke: 1px black;">
+  <h2>About Us</h2>
+  <p>
+    <em>We’re not here to overcomplicate things.</em> At Affordable Enterprises LLC, we dig, we move, and we do it right. 
+    Our work is built on <strong>honesty, hard effort,</strong> and the belief that <strong>customers deserve the best 
+    quality every single time.</strong>
+  </p>
+  <br>
+  <h3>What We Do</h3>
+  <ul style="list-style-type: disc; margin: 20px; padding-left: 40px;">
+    <li><strong>Excavation:</strong> From small jobs to big sites, we handle the heavy lifting with precision.</li>
+    <li><strong>Septic Repairs:</strong> Whether it’s fixing a system or keeping it running smoothly, we make sure your property stays safe and functional.</li>
+    <li><strong>Straightforward Service:</strong> No shortcuts, no excuses — just results you can count on.</li>
+  </ul>
+  <br>
+  <h3>Why Choose Us</h3>
+  <ul style="list-style-type: disc; margin: 20px; padding-left: 40px;">
+    <li>We show up when we say we will.</li>
+    <li>We put pride into every job, no matter the size.</li>
+    <li>We treat your project like it’s our own.</li>
+  </ul>
+  <br>
+  <p><strong>At the end of the day, our promise is simple:</strong> we get the job done, and we get it done right.</p>
+</section>
+
+<!-- Professional Advice Section -->
+<section id="professional-advice" style="padding:40px 0;">
+  <h2 style="text-align:center; margin-bottom:20px; font-family:'Poppins',sans-serif;">
+    Professional Advice
+  </h2>
+
+  <div class="advice-grid" style="
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+      gap:20px;
+      max-width:1000px;
+      margin:0 auto;
+      font-family:'Poppins',sans-serif;
+  ">
+    <div class="advice-card" style="
+        background:#f7f7f7;
+        padding:20px;
+        border-radius:8px;
+        box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    ">
+      <h3 style="text-align:center"; style="margin-bottom:10px;">Expert Insight</h3>
+      <p>
+        Get clear, actionable guidance tailored to your project needs. Whether you're planning a major excavation or optimizing workflow, our expertise helps you make confident decisions.
+      </p>
     </div>
-   </nav>
-   <!-- Hero Section -->
-   <section class="hero w-full py-24 px-6 relative">
-    <div class="max-w-6xl mx-auto relative z-10">
-     <div class="grid md:grid-cols-2 gap-12 items-center">
-      <div>
-       <h1 id="hero-heading" class="text-5xl md:text-6xl font-bold mb-6 fade-in" style="animation-delay: 0.1s;">Elevate Your Celebration</h1>
-       <p id="hero-subheading" class="text-xl mb-8 opacity-90 fade-in" style="animation-delay: 0.3s;"> Mission statement description.</p>
-       <button id="hero-cta" class="cta-button px-8 py-4 text-lg rounded-lg fade-in" style="animation-delay: 0.5s;"> Get Started </button>
-      </div>
-      <div class="hidden md:flex justify-center">
-       <div class="w-72 h-72 rounded-full" style="background: linear-gradient(135deg, var(--accent-color) 0%, rgba(201, 169, 97, 0.3) 100%); display: flex; align-items: center; justify-content: center;">
-        <span style="font-size: 120px;">🍽️</span>
-       </div>
-      </div>
-     </div>
+
+    <div class="advice-card" style="
+        background:#f7f7f7;
+        padding:20px;
+        border-radius:8px;
+        box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    ">
+      <h3 style="text-align:center"; style="margin-bottom:10px;">Project Planning</h3>
+      <p>
+        Understand timelines, budgeting, and best practices before breaking ground. We help you map out each step to ensure efficiency and long‑term success.
+      </p>
     </div>
-   </section>
-   <!-- Services Section -->
-   <section class="w-full py-24 px-6 bg-white">
-    <div class="max-w-6xl mx-auto">
-     <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold mb-4 section-title inline-block">Our Services</h2>
-     </div>
-     <div class="grid md:grid-cols-3 gap-8">
-      <!-- Service 1 -->
-      <div class="service-card p-8 rounded-lg">
-       <div class="text-4xl mb-4">🎉</div>
-       <h3 id="service-1-title" class="text-2xl font-bold mb-3" style="color: var(--primary-color);">Corporate Events</h3>
-       <p id="service-1-desc" class="text-base leading-relaxed" style="color: var(--light-text);">Impress your clients and colleagues with refined menus and professional service tailored to your company's needs.</p>
-      </div>
-      <!-- Service 2 -->
-      <div class="service-card p-8 rounded-lg">
-       <div class="text-4xl mb-4">💍</div>
-       <h3 id="service-2-title" class="text-2xl font-bold mb-3" style="color: var(--primary-color);">Weddings & Celebrations</h3>
-       <p id="service-2-desc" class="text-base leading-relaxed" style="color: var(--light-text);">Make your special day unforgettable with custom menus and elegant presentations that reflect your unique style.</p>
-      </div>
-      <!-- Service 3 -->
-      <div class="service-card p-8 rounded-lg">
-       <div class="text-4xl mb-4">👨‍👩‍👧‍👦</div>
-       <h3 id="service-3-title" class="text-2xl font-bold mb-3" style="color: var(--primary-color);">Home Gatherings</h3>
-       <p id="service-3-desc" class="text-base leading-relaxed" style="color: var(--light-text);">Enjoy stress-free entertaining with our complete catering solutions designed for intimate home events.</p>
-      </div>
-     </div>
+
+    <div class="advice-card" style="
+        background:#f7f7f7;
+        padding:20px;
+        border-radius:8px;
+        box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    ">
+      <h3 style="text-align:center"; style="margin-bottom:10px;">Professional Recommendations</h3>
+      <p>
+        Receive honest, experience‑backed recommendations on equipment, materials, and strategies that maximize value and minimize risk.
+      </p>
     </div>
-   </section>
-   <!-- Why Choose Us Section -->
-   <section class="w-full py-24 px-6" style="background: var(--secondary-color);">
-    <div class="max-w-6xl mx-auto">
-     <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold mb-4 section-title inline-block">Why Choose Us</h2>
-     </div>
-     <div class="grid md:grid-cols-4 gap-8">
-      <div class="text-center">
-       <div class="text-5xl mb-4">👨‍🍳</div>
-       <h4 class="text-lg font-bold mb-2" style="color: var(--primary-color);">Expert Chefs</h4>
-       <p style="color: var(--light-text);">Classically trained culinary professionals</p>
-      </div>
-      <div class="text-center">
-       <div class="text-5xl mb-4">🌿</div>
-       <h4 class="text-lg font-bold mb-2" style="color: var(--primary-color);">Fresh Ingredients</h4>
-       <p style="color: var(--light-text);">Locally sourced, seasonal produce</p>
-      </div>
-      <div class="text-center">
-       <div class="text-5xl mb-4">✨</div>
-       <h4 class="text-lg font-bold mb-2" style="color: var(--primary-color);">Attention to Detail</h4>
-       <p style="color: var(--light-text);">Every plate is a masterpiece</p>
-      </div>
-      <div class="text-center">
-       <div class="text-5xl mb-4">⭐</div>
-       <h4 class="text-lg font-bold mb-2" style="color: var(--primary-color);">15+ Years Experience</h4>
-       <p style="color: var(--light-text);">Trusted by hundreds of families</p>
-      </div>
-     </div>
-    </div>
-   </section>
-   <!-- CTA Section -->
-   <section class="w-full py-20 px-6" style="background: var(--primary-color);">
-    <div class="max-w-4xl mx-auto text-center text-white">
-     <h2 class="text-4xl font-bold mb-6">Ready to Plan Your Event?</h2>
-     <p class="text-xl mb-10 opacity-90">Let's create something extraordinary together</p>
-     <button id="final-cta" class="cta-button px-10 py-4 text-lg rounded-lg"> Contact Us Today </button>
-    </div>
-   </section>
-   <!-- Footer -->
-   <footer class="w-full py-8 px-6" style="background: #1a1a1a; color: white;">
-    <div class="max-w-6xl mx-auto flex justify-between items-center">
-     <p id="footer-text">© 2024 Unaffordable Retardation. All rights reserved.</p>
-     <div class="flex gap-6 text-sm">
-      <a href="#" target="_blank" rel="noopener noreferrer" class="opacity-75 hover:opacity-100">Instagram</a>
-      <a href="#" target="_blank" rel="noopener noreferrer" class="opacity-75 hover:opacity-100">Facebook</a>
-      <a href="#" target="_blank" rel="noopener noreferrer" class="opacity-75 hover:opacity-100">Contact</a>
-     </div>
-    </div>
-   </footer>
   </div>
+</section>
+  
+  <!-- Photos Section - now side-by-side -->
+  <section id="photos">
+    <h2 style="text-align:center; margin-bottom:20px; font-family:'Poppins',sans-serif;">Photos</h2>
+    <div class="photos-grid grid">
+      <!-- Example image blocks. Replace background-image URLs with your real photos -->
+      <div class="photo" style="background-image: url('https://i.ibb.co/RG49Jk45/IMG-3772.jpg');"></div>
+      <div class="photo" style="background-image: url('https://i.ibb.co/bM9bzLfD/IMG-3776.jpg');"></div>
+      <div class="photo" style="background-image: url('https://i.ibb.co/8nrhyY7T/IMG-8357.jpg');"></div>
+      <div class="photo" style="background-image: url('https://i.ibb.co/CKhyTxrf/IMG-8358.jpg');"></div>
+      <div class="photo" style="background-image: url('https://i.ibb.co/hRYwnksp/IMG-0241.avif');"></div>
+      <div class="photo" style="background-image: url('https://i.ibb.co/ynzvyn9B/IMG-0247.avif');"></div>
+      <div class="photo" style="background-image: url('https://i.ibb.co/KzbD687D/IMG-0250.avif');"></div>
+      <div class="photo" style="background-image: url('https://i.ibb.co/kYcvmr9/IMG-0251.avif');"></div>
+      <!-- Add more .photo divs as needed; they will wrap responsively -->
+    </div>
+  </section>
+  <!-- Contact Section (centered, large, eye-catching font) -->
+  <section id="contact">
+    <h2>Contact Us</h2>
 
-  <script>
-        const defaultConfig = {
-            business_name: "Unaffordable Retardation",
-            tagline: "Exquisite Events, Unforgettable Moments",
-            hero_heading: " Mission Statement Mission Statement",
-            hero_subheading: "Bring your vision to life with our award-winning catering services. From intimate gatherings to grand celebrations.",
-            service_1_title: "Corporate Events",
-            service_1_desc: "Impress your clients and colleagues with refined menus and professional service tailored to your company's needs.",
-            service_2_title: "Weddings & Celebrations",
-            service_2_desc: "Make your special day unforgettable with custom menus and elegant presentations that reflect your unique style.",
-            service_3_title: "Home Gatherings",
-            service_3_desc: "Enjoy stress-free entertaining with our complete catering solutions designed for intimate home events.",
-            cta_button_text: "Get Started",
-            footer_text: "© 2024 Unaffordable Retardation. All rights reserved."
-        };
-        let config = { ...defaultConfig };
-        const elementConfig = {
-            defaultConfig,
-            onConfigChange: async (newConfig) => {
-                config = { ...config, ...newConfig };
-                updateUI();
-            },
-            mapToCapabilities: () => ({
-                recolorables: [],
-                borderables: [],
-                fontEditable: undefined,
-                fontSizeable: undefined
-            }),
-            mapToEditPanelValues: () => {
-                return new Map([
-                    ["business_name", config.business_name || defaultConfig.business_name],
-                    ["tagline", config.tagline || defaultConfig.tagline],
-                    ["hero_heading", config.hero_heading || defaultConfig.hero_heading],
-                    ["hero_subheading", config.hero_subheading || defaultConfig.hero_subheading],
-                    ["service_1_title", config.service_1_title || defaultConfig.service_1_title],
-                    ["service_1_desc", config.service_1_desc || defaultConfig.service_1_desc],
-                    ["service_2_title", config.service_2_title || defaultConfig.service_2_title],
-                    ["service_2_desc", config.service_2_desc || defaultConfig.service_2_desc],
-                    ["service_3_title", config.service_3_title || defaultConfig.service_3_title],
-                    ["service_3_desc", config.service_3_desc || defaultConfig.service_3_desc],
-                    ["cta_button_text", config.cta_button_text || defaultConfig.cta_button_text],
-                    ["footer_text", config.footer_text || defaultConfig.footer_text]
-                ]);
-            }
-        };
-        function updateUI() {
-            document.getElementById('nav-business-name').textContent = config.business_name || defaultConfig.business_name;
-            document.getElementById('nav-tagline').textContent = config.tagline || defaultConfig.tagline;
-            document.getElementById('hero-heading').textContent = config.hero_heading || defaultConfig.hero_heading;
-            document.getElementById('hero-subheading').textContent = config.hero_subheading || defaultConfig.hero_subheading;
-           
-            document.getElementById('service-1-title').textContent = config.service_1_title || defaultConfig.service_1_title;
-            document.getElementById('service-1-desc').textContent = config.service_1_desc || defaultConfig.service_1_desc;
-            document.getElementById('service-2-title').textContent = config.service_2_title || defaultConfig.service_2_title;
-            document.getElementById('service-2-desc').textContent = config.service_2_desc || defaultConfig.service_2_desc;
-            document.getElementById('service-3-title').textContent = config.service_3_title || defaultConfig.service_3_title;
-            document.getElementById('service-3-desc').textContent = config.service_3_desc || defaultConfig.service_3_desc;
-           
-            const ctaText = config.cta_button_text || defaultConfig.cta_button_text;
-            document.getElementById('hero-cta').textContent = ctaText;
-            document.getElementById('final-cta').textContent = ctaText;
-           
-            document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
-        }
-        // Initialize the Element SDK
-        if (window.elementSdk) {
-            window.elementSdk.init(elementConfig);
-        }
-        // Add click handlers
-        document.getElementById('hero-cta').addEventListener('click', () => {
-            const contactSection = document.querySelector('section:nth-of-type(4)');
-            if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-            }
-        });
-       
-        document.getElementById('final-cta').addEventListener('click', () => {
-            alert('Thank you for your interest! Please contact us at info@unaffordableretardation.com or call (555) 123-4567');
-        });
-    </script>
+    <div class="contact-details" aria-live="polite">
+  <p>📍 Central CT</p>
 
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d4a444e92260c50',t:'MTc3MjIyMjQxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+  <!-- ✅ Click-to-call phone number -->
+  <p>📲 <a href="tel:8603651092" style="color:#0b3d91; text-decoration:none;">
+    (860) 365-1092
+  </a></p>
+
+  <!-- ✅ Email link -->
+  <p>📧 <a href="mailto:affordableenterprise@yahoo.com">
+    affordableenterprise@yahoo.com
+  </a></p>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Affordable Enterprises LLC | All Rights Reserved</p>
+  </footer>
+ /*
+  <!-- Disabled 
+  <div id="leadModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
+    <div class="modal" role="document">
+      <h3 id="leadModalTitle">Interested in Working With Us?</h3>
+      <p>Leave your name, email, and phone and we'll get back to you quickly.</p>
+
+      <form id="leadForm">
+        <label for="leadName">Full name</label>
+        <input id="leadName" name="name" type="text" placeholder="Jane Doe" required />
+
+        <label for="leadEmail">Email</label>
+        <input id="leadEmail" name="email" type="email" placeholder="you@example.com" required />
+
+        <label for="leadPhone">Phone</label>
+        <input id="leadPhone" name="phone" type="tel" placeholder="(860) 555-1234" required />
+
+        <div class="actions">
+          <button type="button" class="btn btn-ghost" id="leadDismiss">Not now</button>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+
+      <p id="leadThanks" style="display:none; margin-top:12px; color:green;">Thanks! We'll be in touch shortly.</p>
+    </div>
+  </div>
+  -->
+</body>
 </html>
