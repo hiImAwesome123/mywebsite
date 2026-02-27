@@ -4,7 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Affordable Enterprises LLC</title>
-
+  
+  <!-- ✅ Browser tab icon -->
+ <link rel="icon" type="image/png" href="/favicon.png">
+ <link rel="icon" type="image/x-icon" href="/favicon.ico">
+ 
   <!-- Eye-catching font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -26,7 +30,9 @@
       background: #fafafa;
       color: #222;
     }
-
+body, html {
+  overflow-x: hidden;
+}
     /* Fullscreen Hero Section */
     .hero {
       height: 100vh; /* Full window height */
@@ -95,14 +101,6 @@
 
     section:nth-child(even) {
       background: #e8e8e8;
-    }
-
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-family: 'Poppins', sans-serif;
     }
 
     /* Grid layouts for photos & videos - side by side on wider screens */
@@ -299,7 +297,8 @@
   </style>
 </head>
 <body>
-  <!-- Hero Section with Background Image -->
+<!-- HERO SECTION (top banner) -->
+<!-- Displays company name over background image -->
 <section id="home" class="hero"
   style="background: url('https://i.postimg.cc/4xWpfNX0/IMG-0245.avif') no-repeat center center/cover;">
  
@@ -322,132 +321,773 @@
 
 </section>
 
-  <!-- Sticky Navigation -->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#professional-advice">Professional Advice</a>
-    <a href="#photos">Photos</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<!-- Slide-Out Navigation + Top Bar -->
+<div class="top-bar">
+  <img id="navToggle" src="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png" alt="Logo" class="logo">
 
+  <!-- Popup hint -->
+  <div id="navHint" class="nav-hint">
+    ← Press this for quick access!
+  </div>
+</div>
+
+<div id="sideNav" class="side-nav">
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#why-choose-us">Why choose us?</a>
+  <a href="#service-area">Service Area</a>
+  <a href="#professional-advice">Professional Advice</a>
+  <a href="#photos">Photos</a>
+  <a href="#contact">Contact</a>
+  <a href="bobcatservices.html">Bobcat Services</a>
+  <a href="future.html">Future</a>
+</div>
+  
+<style>
+/* Prevent horizontal overflow on mobile */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Top bar */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65px;
+  background: rgba(51,51,51,0);
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  z-index: 1000;
+}
+
+/* Logo toggle */
+.logo {
+  height: 45px;
+  width: auto;
+  cursor: pointer;
+}
+
+/* Popup hint styling */
+.nav-hint {
+  margin-left: 15px;
+  background: #ffcc00;
+  color: #000;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  opacity: 0;
+  transform: translateY(-5px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+}
+
+.nav-hint.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Slide-out nav (FIXED VERSION) */
+.side-nav {
+  position: fixed;
+  top: 0;
+  width: 260px;
+  height: 100%;
+  background: #333;
+  padding-top: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 999;
+
+  /* FIX: use transform instead of left */
+  transform: translateX(-260px);
+  transition: transform 0.35s ease;
+}
+
+.side-nav.open {
+  transform: translateX(0);
+}
+
+.side-nav a {
+  color: white;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  padding: 10px 25px;
+  display: block;
+}
+
+.side-nav a:hover {
+  background: rgba(255,255,255,0.1);
+}
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.getElementById("sideNav");
+    const toggle = document.getElementById("navToggle");
+    const hint = document.getElementById("navHint");
+
+    // Toggle menu when clicking the logo
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+
+    // Close menu when clicking inside it
+    nav.addEventListener("click", () => {
+      nav.classList.remove("open");
+    });
+
+    // Show hint popup for 5 seconds
+    setTimeout(() => {
+      hint.classList.add("show");
+    }, 300);
+
+    setTimeout(() => {
+      hint.classList.remove("show");
+    }, 3300);
+  });
+</script>
+   <!-- Savable contact info file -->
+<a href="https://www.affordableenterprisesllc.com/affordable-enterprises.vcf" 
+   class="floating-contact-btn" id="contactBtn">
+  💬•📞•✉️
+</a>
+
+<style>
+  .floating-contact-btn {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: #ffcc00;
+    color: #000;
+    padding: 10px 18px;
+    border-radius: 6px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    z-index: 1500;
+    opacity: 0;                 /* Hidden at first */
+    pointer-events: none;       /* Not clickable until shown */
+    transition: opacity 0.6s ease;
+  }
+
+  /* When revealed */
+  .floating-contact-btn.show {
+    opacity: 1;
+    pointer-events: auto;
+
+    /* Pulse animation starts only after it appears */
+    animation: pulse 2.2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4);
+    }
+    50% {
+      transform: scale(1.05);
+      box-shadow: 0 0 12px 4px rgba(255, 204, 0, 0.25);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4);
+    }
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("contactBtn");
+
+    // Show the button after 3300ms
+    setTimeout(() => {
+      btn.classList.add("show");
+    }, 3400);
+  });
+</script>
+  
  <!-- About Section -->
-<section id="about" style="background: url('https://i.postimg.cc/8kvdRSbj/IMG-0244.avif') no-repeat center center/cover; font-size: 28px; color: white; text-align: center; padding: 30px; -webkit-text-stroke: 1px black;">
-  <h2>About Us</h2>
-  <p>
-    <em>We’re not here to overcomplicate things.</em> At Affordable Enterprises LLC, we dig, we move, and we do it right. 
-    Our work is built on <strong>honesty, hard effort,</strong> and the belief that <strong>customers deserve the best 
-    quality every single time.</strong>
+<section id="about" 
+style="
+  background: url('https://i.postimg.cc/8kvdRSbj/IMG-0244.avif') no-repeat center center/cover;
+  color: white;
+  text-align: center;
+  padding: 60px 25px;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+">
+
+  <!-- Soft dark overlay for readability -->
+  <div style="
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    backdrop-filter: blur(1px);
+    z-index: 1;
+  "></div>
+
+  <!-- Content wrapper -->
+<div style="position: relative; z-index: 2; max-width: 900px; margin: auto;">
+
+  <h2 style="
+    font-size: 3.4rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    color: #fff;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.7);
+  ">
+    About Us
+  </h2>
+
+  <p style="
+    font-size: 1.6rem;
+    line-height: 1.7;
+    font-weight: 500;
+    color: #f1f1f1;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.7);
+    margin-bottom: 35px;
+  ">
+    Affordable Enterprises LLC is a <strong>Family owned and operated team</strong> built on trust, hard work, and doing things the right way.
+    We show up, put in the effort, and deliver results that last.
   </p>
-  <br>
-  <h3>What We Do</h3>
-  <ul style="list-style-type: disc; margin: 20px; padding-left: 40px;">
-    <li><strong>Excavation:</strong> From small jobs to big sites, we handle the heavy lifting with precision.</li>
-    <li><strong>Septic Repairs:</strong> Whether it’s fixing a system or keeping it running smoothly, we make sure your property stays safe and functional.</li>
-    <li><strong>Straightforward Service:</strong> No shortcuts, no excuses — just results you can count on.</li>
+
+  <h3 style="
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.7);
+  ">
+    What We Do
+  </h3>
+
+  <ul style="
+    list-style-type: disc;
+    text-align: left;
+    margin: 0 auto 40px;
+    padding-left: 40px;
+    max-width: 700px;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #f1f1f1;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+  ">
+    <li><strong>Excavation:</strong> From tight spaces to full property reshaping, we handle every dig with precision.</li>
+    <li><strong>Septic Repairs:</strong> Clean, reliable, and efficient solutions to keep your system running right.</li>
+    <li><strong>Lawn Expansions:</strong> Turning overgrown or unused areas into clean, open, usable space.</li>
   </ul>
-  <br>
-  <h3>Why Choose Us</h3>
-  <ul style="list-style-type: disc; margin: 20px; padding-left: 40px;">
+
+  <h3 style="
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    font-weight: 800;
+    color: #fff;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.7);
+  ">
+    What makes us special?
+  </h3>
+
+  <ul style="
+    list-style-type: disc;
+    text-align: left;
+    margin: 0 auto 40px;
+    padding-left: 40px;
+    max-width: 700px;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #f1f1f1;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+  ">
+    <li><strong>Family Owned and Operated:</strong> Working side by side, committed to quality.</li>
     <li>We show up when we say we will.</li>
-    <li>We put pride into every job, no matter the size.</li>
-    <li>We treat your project like it’s our own.</li>
+    <li>We put pride into every job, big or small.</li>
+    <li>We treat your property like it’s our own.</li>
   </ul>
-  <br>
-  <p><strong>At the end of the day, our promise is simple:</strong> we get the job done, and we get it done right.</p>
+
+  <p style="
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #fff;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.7);
+  ">
+    <strong>Our promise is simple:</strong> we get the job done and we get it done right.
+  </p>
+
+</div>
 </section>
 
+<!-- Why choose us section -->
+<section id="why-choose-us" style="
+  padding: 60px 20px;
+  text-align: center;
+  background: #ffffff;
+  font-family: 'Poppins', sans-serif;
+">
+
+  <h2 style="
+    font-size: 3rem;
+    font-weight: 900;
+    color: #0b3d91;
+    margin-bottom: 25px;
+    text-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  ">
+    Why You Should Choose Affordable Enterprises LLC
+  </h2>
+
+  <p style="
+    font-size: 1.4rem;
+    max-width: 800px;
+    margin: 0 auto 35px;
+    color: #333;
+    line-height: 1.7;
+    font-weight: 500;
+  ">
+    When it comes to excavation, experience and equipment matter. With us, you’re getting real capability, real reliability, and a family operated team that takes pride in every job.
+  </p>
+
+  <ul style="
+    list-style-type: none;
+    padding: 0;
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: left;
+    font-size: 1.3rem;
+    line-height: 1.9;
+    color: #222;
+    font-weight: 600;
+  ">
+    <li>✔ Construction equipment <strong>appropriate</strong> for the site conditions</li>
+    <li>✔ <strong>Family owned and operated</strong> team</li>
+    <li>✔ <strong>Fast response times</strong> and reliable scheduling</li>
+    <li>✔ <strong>Fair, transparent pricing</strong> with no surprises</li>
+    <li>✔ <strong>Fully insured</strong> for your protection</li>
+    <li>✔ <strong>15+ years combined experience</strong> in excavation & septic work</li>
+    <li>✔ <strong>Start to finish service</strong> we handle everything</li>
+  </ul>
+
+</section>
+
+<!-- Serve area section -->
+  <section id="service-area" style="padding: 60px 20px; background: white;">
+
+  <h2 style="
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #0b3d91;
+    margin-bottom: 25px;
+  ">
+    Service Area
+  </h2>
+
+  <p style="
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+  ">
+    Proudly serving Connecticut with fast, reliable excavation services.
+  </p>
+
+  <div style="max-width: 900px; margin: auto; text-align: center;">
+    <p style="font-size: 1.2rem; line-height: 1.8;">
+      East Hampton • Colchester • Marlborough • Glastonbury • Hebron • Middletown • Portland • Haddam • Killingworth • Chester • Deep River • Essex • Old Saybrook • Lyme • Old Lyme • Clinton • Madison • Guilford • Durham • Wallingford • Meriden • Cromwell • Berlin • Wethersfield • Rocky Hill • Newington • And more
+    </p>
+  </div>
+
+</section>
+  
 <!-- Professional Advice Section -->
-<section id="professional-advice" style="padding:40px 0;">
-  <h2 style="text-align:center; margin-bottom:20px; font-family:'Poppins',sans-serif;">
+<section id="professional-advice" style="padding:60px 0; background:#f9f9f9;">
+  <h2 style="
+    text-align:center;
+    margin-bottom:35px;
+    font-family:'Poppins',sans-serif;
+    font-size:2.6rem;
+    font-weight:800;
+    color:#0b3d91;
+    text-shadow:0 3px 12px rgba(0,0,0,0.1);
+  ">
     Professional Advice
   </h2>
 
-  <div class="advice-grid" style="
-      display:grid;
-      grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
-      gap:20px;
-      max-width:1000px;
-      margin:0 auto;
-      font-family:'Poppins',sans-serif;
-  ">
-    <div class="advice-card" style="
-        background:#f7f7f7;
-        padding:20px;
-        border-radius:8px;
-        box-shadow:0 2px 6px rgba(0,0,0,0.1);
-    ">
-      <h3 style="text-align:center"; style="margin-bottom:10px;">Expert Insight</h3>
+  <div class="advice-grid">
+    <div class="advice-card">
+      <h3>Expert Insight</h3>
       <p>
         Get clear, actionable guidance tailored to your project needs. Whether you're planning a major excavation or optimizing workflow, our expertise helps you make confident decisions.
       </p>
     </div>
 
-    <div class="advice-card" style="
-        background:#f7f7f7;
-        padding:20px;
-        border-radius:8px;
-        box-shadow:0 2px 6px rgba(0,0,0,0.1);
-    ">
-      <h3 style="text-align:center"; style="margin-bottom:10px;">Project Planning</h3>
+    <div class="advice-card">
+      <h3>Project Planning</h3>
       <p>
         Understand timelines, budgeting, and best practices before breaking ground. We help you map out each step to ensure efficiency and long‑term success.
       </p>
     </div>
 
-    <div class="advice-card" style="
-        background:#f7f7f7;
-        padding:20px;
-        border-radius:8px;
-        box-shadow:0 2px 6px rgba(0,0,0,0.1);
-    ">
-      <h3 style="text-align:center"; style="margin-bottom:10px;">Professional Recommendations</h3>
+    <div class="advice-card">
+      <h3>Professional Recommendations</h3>
       <p>
         Receive honest, experience‑backed recommendations on equipment, materials, and strategies that maximize value and minimize risk.
       </p>
     </div>
   </div>
 </section>
+
+<style>
+  .advice-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .advice-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    transition: all 0.35s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+    /* Start hidden for mobile animation */
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  /* Desktop hover effect */
+  @media (hover: hover) {
+    .advice-card:hover {
+      transform: translateY(-10px) scale(1.03);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+      border-color: #ffcc00;
+    }
+  }
+
+  /* Mobile + desktop "in-view" animation */
+  .advice-card.in-view {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .advice-card h3 {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0b3d91;
+  }
+
+  .advice-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #333;
+  }
+</style>
+
+<script>
+  // Intersection Observer for mobile + desktop reveal animation
+  document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll(".advice-card");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("in-view");
+        }
+      });
+    }, { threshold: 0.3 });
+
+    cards.forEach(card => observer.observe(card));
+  });
+</script>
   
-  <!-- Photos Section - now side-by-side -->
-  <section id="photos">
-    <h2 style="text-align:center; margin-bottom:20px; font-family:'Poppins',sans-serif;">Photos</h2>
-    <div class="photos-grid grid">
-      <!-- Example image blocks. Replace background-image URLs with your real photos -->
-      <div class="photo" style="background-image: url('https://i.ibb.co/RG49Jk45/IMG-3772.jpg');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/bM9bzLfD/IMG-3776.jpg');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/8nrhyY7T/IMG-8357.jpg');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/CKhyTxrf/IMG-8358.jpg');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/hRYwnksp/IMG-0241.avif');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/ynzvyn9B/IMG-0247.avif');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/KzbD687D/IMG-0250.avif');"></div>
-      <div class="photo" style="background-image: url('https://i.ibb.co/kYcvmr9/IMG-0251.avif');"></div>
-      <!-- Add more .photo divs as needed; they will wrap responsively -->
-    </div>
-  </section>
-  <!-- Contact Section (centered, large, eye-catching font) -->
-  <section id="contact">
-    <h2>Contact Us</h2>
+  <!-- Photos Section -->
+<section id="photos" style="padding:60px 0; background:#ffffff;">
+  <h2 style="
+    text-align:center;
+    margin-bottom:35px;
+    font-family:'Poppins',sans-serif;
+    font-size:2.6rem;
+    font-weight:800;
+    color:#0b3d91;
+    text-shadow:0 3px 12px rgba(0,0,0,0.1);
+  ">
+    Photos
+  </h2>
 
-    <div class="contact-details" aria-live="polite">
-  <p>📍 Central CT</p>
+  <div class="photos-grid">
 
-  <!-- ✅ Click-to-call phone number -->
-  <p>📲 <a href="tel:8603651092" style="color:#0b3d91; text-decoration:none;">
-    (860) 365-1092
-  </a></p>
+  <!-- Photo 1 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/RG49Jk45/IMG-3772.jpg');"></div>
+    <p class="photo-desc">Before installation of D-Box</p>
+  </div>
 
-  <!-- ✅ Email link -->
-  <p>📧 <a href="mailto:affordableenterprise@yahoo.com">
-    affordableenterprise@yahoo.com
-  </a></p>
-</div>
+  <!-- Photo 2 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/bM9bzLfD/IMG-3776.jpg');"></div>
+    <p class="photo-desc">After installation of D-Box</p>
+  </div>
 
+  <!-- Photo 3 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/8nrhyY7T/IMG-8357.jpg');"></div>
+    <p class="photo-desc">Leveling out the leaching field</p>
+  </div>
+
+  <!-- Photo 4 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/CKhyTxrf/IMG-8358.jpg');"></div>
+    <p class="photo-desc">Septic tank installation</p>
+  </div>
+
+  <!-- Photo 5 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/hRYwnksp/IMG-0241.avif');"></div>
+    <p class="photo-desc">Material removal - Top layer removed</p>
+  </div>
+
+  <!-- Photo 6 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/ynzvyn9B/IMG-0247.avif');"></div>
+    <p class="photo-desc">Material removal – Depth nearly at target grade </p>
+  </div>
+
+  <!-- Photo 7 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/KzbD687D/IMG-0250.avif');"></div>
+    <p class="photo-desc">Material removal - Ramp for access</p>
+  </div>
+
+  <!-- Photo 8 -->
+  <div class="photo-item">
+    <div class="photo" style="background-image:url('https://i.ibb.co/kYcvmr9/IMG-0251.avif');"></div>
+    <p class="photo-desc">Material removal - All material removed</p>
+  </div>
+
+</div> 
+</section>
+
+<style>
+  .photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .photo {
+    width: 100%;
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    cursor: pointer;
+    transition: all 0.35s ease;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+  }
+
+  .photo:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.25), 0 0 12px rgba(255,204,0,0.4);
+    border: 2px solid #ffcc00;
+  }
+  
+
+  /* Fade-in animation */
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Lightbox overlay */
+  .lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .lightbox-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .lightbox-image {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255,255,255,0.3);
+  }
+  <style>
+  .photo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .photo-desc {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+  }
+</style>
+
+<script>
+  // Lightbox functionality
+  document.addEventListener("DOMContentLoaded", () => {
+    const photos = document.querySelectorAll(".photo");
+
+    // Create overlay
+    const overlay = document.createElement("div");
+    overlay.className = "lightbox-overlay";
+    overlay.innerHTML = `<img class="lightbox-image" src="">`;
+    document.body.appendChild(overlay);
+
+    const overlayImg = overlay.querySelector(".lightbox-image");
+
+    photos.forEach(photo => {
+      photo.addEventListener("click", () => {
+        const bg = photo.style.backgroundImage.slice(5, -2);
+        overlayImg.src = bg;
+        overlay.classList.add("show");
+      });
+    });
+
+    overlay.addEventListener("click", () => {
+      overlay.classList.remove("show");
+    });
+  });
+</script>
+   
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <h2>Contact Us</h2>
+
+  <div class="contact-details" aria-live="polite">
+    <p>📍 Central CT</p>
+    <p>📲 <a href="tel:8603651092" class="contact-link">(860) 365-1092</a></p>
+    <p>📧 <a href="mailto:affordableenterprise@yahoo.com" class="contact-link">
+      affordableenterprise@yahoo.com
+    </a></p>
+  </div>
+
+  <!-- Logo added to fill the space -->
+  <div class="contact-logo">
+    <img src="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png" alt="Affordable Enterprises Logo">
+  </div>
+</section>
+
+<style>
+  .contact-section {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background: #ffffff;
+    padding: 20px 10px 10px 10px; /* very compact */
+    border-top: 3px solid #ffcc00;
+  }
+
+  .contact-section h2 {
+    font-size: 2rem;
+    margin: 0 0 8px 0;
+    font-weight: 800;
+    color: #0b3d91;
+  }
+
+  .contact-details {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #222;
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .contact-details p {
+    margin: 4px 0;
+  }
+
+  .contact-link {
+    color: #0b3d91;
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+  }
+
+  .contact-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 0%;
+    height: 2px;
+    background: #ffcc00;
+    transition: width 0.3s ease;
+    border-radius: 2px;
+  }
+
+  .contact-link:hover::after {
+    width: 100%;
+  }
+
+  /* Logo styling */
+  .contact-logo {
+    margin-top: 10px;
+    margin-bottom: 0;
+  }
+
+  .contact-logo img {
+    width: 120px; /* perfect size */
+    height: auto;
+    opacity: 0.95;
+    display: block;
+    margin: 0 auto;
+  }
+</style>
+  
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 Affordable Enterprises LLC | All Rights Reserved</p>
-  </footer>
- /*
+<footer>
+  <p>&copy; 2026 Affordable Enterprises LLC | All Rights Reserved</p>
+</footer>
+  
+  <!-- Footer styler -->
+  <style>
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+    </style>
   <!-- Disabled 
   <div id="leadModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
     <div class="modal" role="document">
