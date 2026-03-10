@@ -3,21 +3,67 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Affordable Enterprises LLC</title>
-  
-  <!-- ✅ Browser tab icon -->
- <link rel="icon" type="image/png" href="/favicon.png">
- <link rel="icon" type="image/x-icon" href="/favicon.ico">
- 
-  <!-- Eye-catching font -->
+
+  <title>Excavation & Septic Services in Central Connecticut | Affordable Enterprises LLC</title>
+
+  <!-- Primary SEO meta -->
+  <meta name="description" content="Affordable Enterprises LLC is a family-owned excavation and septic service company based in Central Connecticut. We provide excavation, septic repairs, lawn expansions, grading, skid steer services, and material removal across East Hampton, Colchester, Marlborough, Glastonbury, Middletown, Portland, and surrounding CT towns." />
+  <meta name="keywords" content="excavation CT, septic repair CT, excavation East Hampton CT, skid steer services CT, grading CT, lawn expansion CT, material removal CT, septic services Central Connecticut, excavation contractor Middlesex County, Affordable Enterprises LLC" />
+  <link rel="canonical" href="https://www.affordableenterprisesllc.com/" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Asimovian:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
 
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Excavation & Septic Services in Central Connecticut | Affordable Enterprises LLC" />
+  <meta property="og:description" content="Family-owned excavation and septic contractor providing excavation, septic repairs, grading, lawn expansions, and skid steer services across Central Connecticut." />
+  <meta property="og:url" content="https://www.affordableenterprisesllc.com/" />
+  <meta property="og:image" content="https://i.postimg.cc/4xWpfNX0/IMG-0245.avif" />
+
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Affordable Enterprises LLC",
+    "image": "https://i.postimg.cc/TP3HtrM7/excavatorlogo.png",
+    "@id": "https://www.affordableenterprisesllc.com/",
+    "url": "https://www.affordableenterprisesllc.com/",
+    "telephone": "+1-860-365-1092",
+    "email": "affordableenterprise@yahoo.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Central Connecticut",
+      "addressRegion": "CT",
+      "addressCountry": "US"
+    },
+    "areaServed": [
+      "East Hampton CT",
+      "Colchester CT",
+      "Marlborough CT",
+      "Glastonbury CT",
+      "Hebron CT",
+      "Middletown CT",
+      "Portland CT",
+      "Middlesex County CT",
+      "Central Connecticut"
+    ],
+    "priceRange": "$$",
+    "description": "Family-owned excavation and septic contractor providing excavation, septic repairs, grading, lawn expansions, skid steer services, and material removal across Central Connecticut.",
+    "sameAs": []
+  }
+  </script>
+
   <style>
-    /* General Reset */
     * {
       margin: 0;
       padding: 0;
@@ -30,12 +76,14 @@
       background: #fafafa;
       color: #222;
     }
-body, html {
-  overflow-x: hidden;
-}
+
+    html, body {
+      overflow-x: hidden;
+    }
+
     /* Fullscreen Hero Section */
     .hero {
-      height: 100vh; /* Full window height */
+      height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -53,28 +101,10 @@ body, html {
       padding: 0 20px;
     }
 
-    /* Sticky Navigation */
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(51,51,51,0.95);
-      padding: 10px 0;
-      text-align: center;
-      width: 100%;
-      z-index: 50;
-    }
-
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-size: 1rem;
+    .hero-subtitle {
+      margin-top: 12px;
+      font-size: 1.3rem;
       font-weight: 600;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
     }
 
     /* Sections */
@@ -83,450 +113,410 @@ body, html {
       min-height: 60vh;
     }
 
-    .placeholder {
-      height: 300px;
-      background: #ccc;
+    /* Top bar + slide nav */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 65px;
+      background: rgba(51,51,51,0);
       display: flex;
       align-items: center;
-      justify-content: center;
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-      border-radius: 8px;
+      padding-left: 20px;
+      z-index: 1000;
+    }
+
+    .logo {
+      height: 45px;
+      width: auto;
+      cursor: pointer;
+    }
+
+    .nav-hint {
+      margin-left: 15px;
+      background: #ffcc00;
+      color: #000;
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      opacity: 0;
+      transform: translateY(-5px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      pointer-events: none;
+    }
+
+    .nav-hint.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .side-nav {
+      position: fixed;
+      top: 0;
+      width: 260px;
+      height: 100%;
+      background: #333;
+      padding-top: 80px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      z-index: 999;
+      transform: translateX(-260px);
+      transition: transform 0.35s ease;
+    }
+
+    .side-nav.open {
+      transform: translateX(0);
+    }
+
+    .side-nav a {
+      color: white;
+      text-decoration: none;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      padding: 10px 25px;
+      display: block;
+    }
+
+    .side-nav a:hover {
+      background: rgba(255,255,255,0.1);
+    }
+
+    /* Floating contact button */
+    .floating-contact-btn {
+      position: fixed;
+      top: 15px;
+      right: 15px;
+      background: #ffcc00;
+      color: #000;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-family: 'Poppins', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+      z-index: 1500;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.6s ease;
+    }
+
+    .floating-contact-btn.show {
+      opacity: 1;
+      pointer-events: auto;
+      animation: pulse 2.2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 12px 4px rgba(255, 204, 0, 0.25);
+      }
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4);
+      }
+    }
+
+    /* About, Why, Service Area, etc. */
+    #about {
+      color: white;
+      text-align: center;
+      padding: 60px 25px;
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #why-choose-us {
+      padding: 60px 20px;
+      text-align: center;
+      background: #ffffff;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #service-area {
+      padding: 60px 20px;
+      background: white;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    #professional-advice {
+      padding: 60px 0;
+      background: #f9f9f9;
+    }
+
+    .advice-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .advice-card {
+      background: white;
+      padding: 25px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+      transition: all 0.35s ease;
+      cursor: pointer;
+      border: 2px solid transparent;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    @media (hover: hover) {
+      .advice-card:hover {
+        transform: translateY(-10px) scale(1.03);
+        box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+        border-color: #ffcc00;
+      }
+    }
+
+    .advice-card.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .advice-card h3 {
+      text-align: center;
+      margin-bottom: 12px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #0b3d91;
+    }
+
+    .advice-card p {
+      font-size: 1rem;
+      line-height: 1.6;
       color: #333;
     }
 
-    section:nth-child(odd) {
-      background: #f4f4f4;
+    /* Photos */
+    #photos {
+      padding: 60px 0;
+      background: #ffffff;
     }
 
-    section:nth-child(even) {
-      background: #e8e8e8;
+    .photos-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
     }
 
-    /* Grid layouts for photos & videos - side by side on wider screens */
-    .grid {
+    .photo-item {
       display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: stretch;
-    }
-
-    .grid .placeholder,
-    .grid .photo,
-    .grid .video-placeholder {
-      border-radius: 8px;
-      overflow: hidden;
-      background: #ddd;
-      display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
-      color: #222;
     }
 
-    /* Photos: show 3 across on wide, 2 on medium, 1 on small */
-    .photos-grid .placeholder,
-    .photos-grid .photo {
-      flex: 1 1 calc(33.333% - 40px);
-      min-width: 220px;
-      max-width: 420px;
+    .photo {
+      width: 100%;
       height: 260px;
       background-size: cover;
       background-position: center;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: all 0.35s ease;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s ease forwards;
     }
 
-    /* Videos: show 2 across on wide, 2 or 1 on small */
-    .videos-grid .placeholder,
-    .videos-grid .video-placeholder {
-      flex: 1 1 calc(45% - 40px);
-      min-width: 260px;
-      height: 220px;
-      background-size: cover;
-      background-position: center;
+    .photo:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25), 0 0 12px rgba(255,204,0,0.4);
+      border: 2px solid #ffcc00;
     }
- 
-    /* Contact section styling - centered and eye-catching */
-    #contact {
+
+    .photo-desc {
+      margin-top: 10px;
+      font-size: 1rem;
+      color: #333;
       text-align: center;
       font-family: 'Poppins', sans-serif;
-      color: #111;
-      background: linear-gradient(120deg, #fff7f0 0%, #f1fbff 100%);
-      padding: 60px 20px;
     }
 
-    #contact h2 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .lightbox-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.85);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+
+    .lightbox-overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .lightbox-image {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.3);
+    }
+
+    /* Contact */
+    .contact-section {
+      text-align: center;
+      font-family: 'Poppins', sans-serif;
+      background: #ffffff;
+      padding: 20px 10px 10px 10px;
+      border-top: 3px solid #ffcc00;
+    }
+
+    .contact-section h2 {
+      font-size: 2rem;
+      margin: 0 0 8px 0;
       font-weight: 800;
       color: #0b3d91;
-      text-shadow: 0 4px 18px rgba(11,61,145,0.12);
     }
 
     .contact-details {
-      margin-top: 20px;
-      font-size: 1.0rem;
+      font-size: 1.05rem;
       font-weight: 600;
       color: #222;
-      line-height: 2.2;
+      line-height: 1.6;
+      margin-bottom: 10px;
     }
 
-    .contact-details a {
+    .contact-details p {
+      margin: 4px 0;
+    }
+
+    .contact-link {
       color: #0b3d91;
       text-decoration: none;
-    }
-
-    /* Modal (popup) to collect name/email/phone on load */
-    .modal-overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.55);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 100;
-    }
-
-    .modal {
-      background: white;
-      max-width: 480px;
-      width: 92%;
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .modal h3 {
-      font-size: 1.4rem;
-      margin-bottom: 10px;
-      color: #0b3d91;
       font-weight: 700;
+      position: relative;
     }
 
-    .modal p {
-      margin-bottom: 16px;
-      color: #333;
+    .contact-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -1px;
+      width: 0%;
+      height: 2px;
+      background: #ffcc00;
+      transition: width 0.3s ease;
+      border-radius: 2px;
     }
 
-    .modal label {
-      display: block;
-      font-size: 0.95rem;
-      margin-bottom: 6px;
-      color: #333;
-    }
-
-    .modal input[type="text"],
-    .modal input[type="email"],
-    .modal input[type="tel"] {
+    .contact-link:hover::after {
       width: 100%;
-      padding: 10px 12px;
-      margin-bottom: 12px;
-      border-radius: 8px;
-      border: 1px solid #ccc;
-      font-size: 1rem;
-      outline: none;
     }
 
-    .modal .actions {
-      display: flex;
-      gap: 10px;
-      justify-content: flex-end;
-      margin-top: 8px;
+    .contact-logo {
+      margin-top: 10px;
+      margin-bottom: 0;
     }
 
-    .btn {
-      padding: 10px 16px;
-      border-radius: 8px;
-      border: none;
-      cursor: pointer;
-      font-weight: 700;
+    .contact-logo img {
+      width: 120px;
+      height: auto;
+      opacity: 0.95;
+      display: block;
+      margin: 0 auto;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
       font-family: 'Poppins', sans-serif;
     }
 
-    .btn-primary {
-      background: #0b3d91;
-      color: white;
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: #0b3d91;
-      border: 2px solid #0b3d91;
-    }
-
-    /* Mobile adjustments */
+    /* Responsive */
     @media (max-width: 992px) {
       .hero h1 {
-        font-size: 2.6rem;
-      }
-
-      .photos-grid .placeholder,
-      .photos-grid .photo {
-        flex: 1 1 calc(45% - 40px);
+        font-size: 2.8rem;
       }
     }
 
     @media (max-width: 768px) {
-    .hero h1 {
-        font-size: 4.2rem;
+      .hero h1 {
+        font-size: 2.6rem;
         text-shadow: 0 6px 20px rgba(0,0,0,0.6);
-        font-family: 'Handlee', cursive; /* ← Forced font changer */
+        font-family: 'Handlee', cursive;
         font-weight: 700;
         letter-spacing: 1px;
         padding: 0 20px;
       }
 
-      nav a {
-        font-size: 0.9rem;
-      }
-
-      .placeholder {
-        height: 200px;
-        font-size: 1rem;
-      }
-
-      .videos-grid .placeholder,
-      .videos-grid .video-placeholder {
-        flex: 1 1 100%;
-      }
-
-      .modal {
-        padding: 18px;
+      .nav-hint {
+        font-size: 0.8rem;
       }
     }
   </style>
 </head>
 <body>
-<!-- HERO SECTION (top banner) -->
-<!-- Displays company name over background image -->
+
+<!-- HERO SECTION -->
 <section id="home" class="hero"
   style="background: url('https://i.postimg.cc/4xWpfNX0/IMG-0245.avif') no-repeat center center/cover;">
- 
-  <h1>Affordable Enterprises LLC</h1>
-
-  <style>
-    /* Force desktop size */
-    #home h1 {
-      font-size: 4rem;
-    }
-
-    /* Force mobile size */
-    @media (max-width: 1000px) {
-      #home h1 {
-        font-size: 4.0rem;
-        font-family: 'Handlee', cursive;
-      }
-    }
-  </style>
-
+  <div>
+    <h1>Excavation & Septic Services in Central Connecticut</h1>
+    <p class="hero-subtitle">Family-owned excavation, septic repair, grading, lawn expansion, and skid steer services by Affordable Enterprises LLC.</p>
+  </div>
 </section>
 
-<!-- Slide-Out Navigation + Top Bar -->
+<!-- Top Bar + Slide-Out Navigation -->
 <div class="top-bar">
-  <img id="navToggle" src="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png" alt="Logo" class="logo">
-
-  <!-- Popup hint -->
+  <img id="navToggle" src="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png" alt="Affordable Enterprises LLC logo - excavation contractor in Central Connecticut" class="logo">
   <div id="navHint" class="nav-hint">
-    ← Press this for quick access!
+    ← Tap here for quick navigation
   </div>
 </div>
 
 <div id="sideNav" class="side-nav">
   <a href="#home">Home</a>
   <a href="#about">About</a>
-  <a href="#why-choose-us">Why choose us?</a>
+  <a href="#why-choose-us">Why Choose Us</a>
   <a href="#service-area">Service Area</a>
   <a href="#professional-advice">Professional Advice</a>
-  <a href="#photos">Photos</a>
+  <a href="#photos">Project Photos</a>
   <a href="#contact">Contact</a>
-  <a href="bobcatservices.html">Bobcat Services</a>
-  <a href="future.html">Future</a>
+  <a href="bobcatservices.html">Skid Steer & Bobcat Services</a>
+  <a href="future.html">Future Projects</a>
 </div>
-  
-<style>
-/* Prevent horizontal overflow on mobile */
-html, body {
-  overflow-x: hidden;
-}
 
-/* Top bar */
-.top-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 65px;
-  background: rgba(51,51,51,0);
-  display: flex;
-  align-items: center;
-  padding-left: 20px;
-  z-index: 1000;
-}
-
-/* Logo toggle */
-.logo {
-  height: 45px;
-  width: auto;
-  cursor: pointer;
-}
-
-/* Popup hint styling */
-.nav-hint {
-  margin-left: 15px;
-  background: #ffcc00;
-  color: #000;
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(-5px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  pointer-events: none;
-}
-
-.nav-hint.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Slide-out nav (FIXED VERSION) */
-.side-nav {
-  position: fixed;
-  top: 0;
-  width: 260px;
-  height: 100%;
-  background: #333;
-  padding-top: 80px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  z-index: 999;
-
-  /* FIX: use transform instead of left */
-  transform: translateX(-260px);
-  transition: transform 0.35s ease;
-}
-
-.side-nav.open {
-  transform: translateX(0);
-}
-
-.side-nav a {
-  color: white;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.1rem;
-  padding: 10px 25px;
-  display: block;
-}
-
-.side-nav a:hover {
-  background: rgba(255,255,255,0.1);
-}
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const nav = document.getElementById("sideNav");
-    const toggle = document.getElementById("navToggle");
-    const hint = document.getElementById("navHint");
-
-    // Toggle menu when clicking the logo
-    toggle.addEventListener("click", () => {
-      nav.classList.toggle("open");
-    });
-
-    // Close menu when clicking inside it
-    nav.addEventListener("click", () => {
-      nav.classList.remove("open");
-    });
-
-    // Show hint popup for 5 seconds
-    setTimeout(() => {
-      hint.classList.add("show");
-    }, 300);
-
-    setTimeout(() => {
-      hint.classList.remove("show");
-    }, 3300);
-  });
-</script>
-   <!-- Savable contact info file -->
-<a href="https://www.affordableenterprisesllc.com/affordable-enterprises.vcf" 
+<a href="https://www.affordableenterprisesllc.com/affordable-enterprises.vcf"
    class="floating-contact-btn" id="contactBtn">
-  💬•📞•✉️
+  💬•📞•✉️ Save Our Contact
 </a>
 
-<style>
-  .floating-contact-btn {
-    position: fixed;
-    top: 15px;
-    right: 15px;
-    background: #ffcc00;
-    color: #000;
-    padding: 10px 18px;
-    border-radius: 6px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    text-decoration: none;
-    cursor: pointer;
-    z-index: 1500;
-    opacity: 0;                 /* Hidden at first */
-    pointer-events: none;       /* Not clickable until shown */
-    transition: opacity 0.6s ease;
-  }
-
-  /* When revealed */
-  .floating-contact-btn.show {
-    opacity: 1;
-    pointer-events: auto;
-
-    /* Pulse animation starts only after it appears */
-    animation: pulse 2.2s ease-in-out infinite;
-  }
-
-  @keyframes pulse {
-    0% {
-      transform: scale(1);
-      box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4);
-    }
-    50% {
-      transform: scale(1.05);
-      box-shadow: 0 0 12px 4px rgba(255, 204, 0, 0.25);
-    }
-    100% {
-      transform: scale(1);
-      box-shadow: 0 0 0 0 rgba(255, 204, 0, 0.4);
-    }
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("contactBtn");
-
-    // Show the button after 3300ms
-    setTimeout(() => {
-      btn.classList.add("show");
-    }, 3400);
-  });
-</script>
-  
- <!-- About Section -->
-<section id="about" 
-style="
-  background: url('https://i.postimg.cc/8kvdRSbj/IMG-0244.avif') no-repeat center center/cover;
-  color: white;
-  text-align: center;
-  padding: 60px 25px;
-  position: relative;
-  font-family: 'Poppins', sans-serif;
-">
-
-  <!-- Soft dark overlay for readability -->
+<!-- ABOUT SECTION -->
+<section id="about"
+  style="background: url('https://i.postimg.cc/8kvdRSbj/IMG-0244.avif') no-repeat center center/cover;">
   <div style="
     position: absolute;
     inset: 0;
@@ -535,104 +525,97 @@ style="
     z-index: 1;
   "></div>
 
-  <!-- Content wrapper -->
-<div style="position: relative; z-index: 2; max-width: 900px; margin: auto;">
+  <div style="position: relative; z-index: 2; max-width: 900px; margin: auto;">
+    <h2 style="
+      font-size: 3.4rem;
+      font-weight: 900;
+      margin-bottom: 20px;
+      color: #fff;
+      text-shadow: 0 4px 18px rgba(0,0,0,0.7);
+    ">
+      About Affordable Enterprises LLC
+    </h2>
 
-  <h2 style="
-    font-size: 3.4rem;
-    font-weight: 900;
-    margin-bottom: 20px;
-    color: #fff;
-    text-shadow: 0 4px 18px rgba(0,0,0,0.7);
-  ">
-    About Us
-  </h2>
+    <p style="
+      font-size: 1.6rem;
+      line-height: 1.7;
+      font-weight: 500;
+      color: #f1f1f1;
+      text-shadow: 0 3px 12px rgba(0,0,0,0.7);
+      margin-bottom: 35px;
+    ">
+      Affordable Enterprises LLC is a <strong>family owned and operated excavation and septic contractor</strong> serving Central Connecticut.
+      We show up, put in the effort, and deliver results that last—whether you need a septic repair, a new leaching field, or a full property reshaped.
+    </p>
 
-  <p style="
-    font-size: 1.6rem;
-    line-height: 1.7;
-    font-weight: 500;
-    color: #f1f1f1;
-    text-shadow: 0 3px 12px rgba(0,0,0,0.7);
-    margin-bottom: 35px;
-  ">
-    Affordable Enterprises LLC is a <strong>Family owned and operated team</strong> built on trust, hard work, and doing things the right way.
-    We show up, put in the effort, and deliver results that last.
-  </p>
+    <h3 style="
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.7);
+    ">
+      Core Excavation & Septic Services
+    </h3>
 
-  <h3 style="
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-    font-weight: 800;
-    color: #fff;
-    text-shadow: 0 4px 16px rgba(0,0,0,0.7);
-  ">
-    What We Do
-  </h3>
+    <ul style="
+      list-style-type: disc;
+      text-align: left;
+      margin: 0 auto 40px;
+      padding-left: 40px;
+      max-width: 700px;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #f1f1f1;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+    ">
+      <li><strong>Excavation:</strong> From tight residential spaces to full property reshaping, we handle every dig with precision and care.</li>
+      <li><strong>Septic Repairs & Installation:</strong> Clean, reliable, and efficient solutions to keep your septic system running right.</li>
+      <li><strong>Lawn Expansions & Grading:</strong> Turning overgrown or uneven areas into clean, open, usable space with proper drainage.</li>
+      <li><strong>Material Removal:</strong> Hauling away soil, debris, and unwanted material to prepare your site for the next step.</li>
+      <li><strong>Skid Steer & Bobcat Services:</strong> Versatile equipment for grading, backfilling, trenching, and more across Central CT.</li>
+    </ul>
 
-  <ul style="
-    list-style-type: disc;
-    text-align: left;
-    margin: 0 auto 40px;
-    padding-left: 40px;
-    max-width: 700px;
-    font-size: 1.3rem;
-    line-height: 1.8;
-    color: #f1f1f1;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.7);
-  ">
-    <li><strong>Excavation:</strong> From tight spaces to full property reshaping, we handle every dig with precision.</li>
-    <li><strong>Septic Repairs:</strong> Clean, reliable, and efficient solutions to keep your system running right.</li>
-    <li><strong>Lawn Expansions:</strong> Turning overgrown or unused areas into clean, open, usable space.</li>
-  </ul>
+    <h3 style="
+      font-size: 2.2rem;
+      margin-bottom: 15px;
+      font-weight: 800;
+      color: #fff;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.7);
+    ">
+      What Makes Us Different
+    </h3>
 
-  <h3 style="
-    font-size: 2.2rem;
-    margin-bottom: 15px;
-    font-weight: 800;
-    color: #fff;
-    text-shadow: 0 4px 16px rgba(0,0,0,0.7);
-  ">
-    What makes us special?
-  </h3>
+    <ul style="
+      list-style-type: disc;
+      text-align: left;
+      margin: 0 auto 40px;
+      padding-left: 40px;
+      max-width: 700px;
+      font-size: 1.3rem;
+      line-height: 1.8;
+      color: #f1f1f1;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.7);
+    ">
+      <li><strong>Family Owned and Operated:</strong> We work side by side and treat every project like it’s on our own property.</li>
+      <li><strong>We show up when we say we will:</strong> Reliable scheduling and clear communication from start to finish.</li>
+      <li><strong>Pride in every job:</strong> Whether it’s a small repair or a full excavation, we focus on quality and long-term results.</li>
+      <li><strong>Respect for your property:</strong> Clean work, careful equipment use, and thoughtful site restoration.</li>
+    </ul>
 
-  <ul style="
-    list-style-type: disc;
-    text-align: left;
-    margin: 0 auto 40px;
-    padding-left: 40px;
-    max-width: 700px;
-    font-size: 1.3rem;
-    line-height: 1.8;
-    color: #f1f1f1;
-    text-shadow: 0 3px 10px rgba(0,0,0,0.7);
-  ">
-    <li><strong>Family Owned and Operated:</strong> Working side by side, committed to quality.</li>
-    <li>We show up when we say we will.</li>
-    <li>We put pride into every job, big or small.</li>
-    <li>We treat your property like it’s our own.</li>
-  </ul>
-<!-- testing commits with vs code-->
-  <p style="
-    font-size: 1.6rem;
-    font-weight: 600;
-    color: #fff;
-    text-shadow: 0 4px 16px rgba(0,0,0,0.7);
-  ">
-    <strong>Our promise is simple:</strong> we get the job done and we get it done right.
-  </p>
-
-</div>
+    <p style="
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: #fff;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.7);
+    ">
+      <strong>Our promise is simple:</strong> we get the job done, and we get it done right—for homeowners and businesses across Central Connecticut.
+    </p>
+  </div>
 </section>
 
-<!-- Why choose us section -->
-<section id="why-choose-us" style="
-  padding: 60px 20px;
-  text-align: center;
-  background: #ffffff;
-  font-family: 'Poppins', sans-serif;
-">
-
+<!-- WHY CHOOSE US -->
+<section id="why-choose-us">
   <h2 style="
     font-size: 3rem;
     font-weight: 900;
@@ -640,7 +623,7 @@ style="
     margin-bottom: 25px;
     text-shadow: 0 4px 14px rgba(0,0,0,0.15);
   ">
-    Why You Should Choose Affordable Enterprises LLC
+    Why Choose Affordable Enterprises LLC for Excavation & Septic Work
   </h2>
 
   <p style="
@@ -651,7 +634,8 @@ style="
     line-height: 1.7;
     font-weight: 500;
   ">
-    When it comes to excavation, experience and equipment matter. With us, you’re getting real capability, real reliability, and a family operated team that takes pride in every job.
+    When it comes to excavation and septic services in Connecticut, experience, equipment, and reliability matter.
+    With Affordable Enterprises LLC, you’re getting a <strong>local, family-operated team</strong> that takes pride in every trench, tank, and grading pass.
   </p>
 
   <ul style="
@@ -665,20 +649,18 @@ style="
     color: #222;
     font-weight: 600;
   ">
-    <li>✔ Construction equipment <strong>appropriate</strong> for the site conditions</li>
-    <li>✔ <strong>Family owned and operated</strong> team</li>
-    <li>✔ <strong>Fast response times</strong> and reliable scheduling</li>
-    <li>✔ <strong>Fair, transparent pricing</strong> with no surprises</li>
-    <li>✔ <strong>Fully insured</strong> for your protection</li>
-    <li>✔ <strong>15+ years combined experience</strong> in excavation & septic work</li>
-    <li>✔ <strong>Start to finish service</strong> we handle everything</li>
+    <li>✔ <strong>Proper equipment</strong> sized for residential and light commercial excavation in CT</li>
+    <li>✔ <strong>Family owned and operated</strong> team you can speak with directly</li>
+    <li>✔ <strong>Fast response times</strong> and reliable scheduling for urgent septic and drainage issues</li>
+    <li>✔ <strong>Fair, transparent pricing</strong> with no hidden surprises</li>
+    <li>✔ <strong>Fully insured</strong> for your protection and peace of mind</li>
+    <li>✔ <strong>15+ years combined experience</strong> in excavation, septic systems, and site work</li>
+    <li>✔ <strong>Start-to-finish service:</strong> from planning and digging to backfilling and cleanup</li>
   </ul>
-
 </section>
 
-<!-- Serve area section -->
-  <section id="service-area" style="padding: 60px 20px; background: white;">
-
+<!-- SERVICE AREA -->
+<section id="service-area">
   <h2 style="
     text-align: center;
     font-size: 3rem;
@@ -686,7 +668,7 @@ style="
     color: #0b3d91;
     margin-bottom: 25px;
   ">
-    Service Area
+    Excavation & Septic Service Area in Connecticut
   </h2>
 
   <p style="
@@ -694,19 +676,21 @@ style="
     font-size: 1.4rem;
     margin-bottom: 30px;
   ">
-    Proudly serving Connecticut with fast, reliable excavation services.
+    We proudly provide excavation, septic repair, grading, and skid steer services across Central Connecticut and surrounding towns.
   </p>
 
   <div style="max-width: 900px; margin: auto; text-align: center;">
     <p style="font-size: 1.2rem; line-height: 1.8;">
-      East Hampton • Colchester • Marlborough • Glastonbury • Hebron • Middletown • Portland • Haddam • Killingworth • Chester • Deep River • Essex • Old Saybrook • Lyme • Old Lyme • Clinton • Madison • Guilford • Durham • Wallingford • Meriden • Cromwell • Berlin • Wethersfield • Rocky Hill • Newington • And more
+      East Hampton • Colchester • Marlborough • Glastonbury • Hebron • Middletown • Portland • Haddam • Killingworth • Chester • Deep River • Essex • Old Saybrook • Lyme • Old Lyme • Clinton • Madison • Guilford • Durham • Wallingford • Meriden • Cromwell • Berlin • Wethersfield • Rocky Hill • Newington • And more across Central Connecticut
+    </p>
+    <p style="font-size: 1.1rem; margin-top: 18px;">
+      If you’re searching for <strong>“excavation near me”</strong> or <strong>“septic repair near me”</strong> in these areas, there’s a good chance we serve your property.
     </p>
   </div>
-
 </section>
-  
-<!-- Professional Advice Section -->
-<section id="professional-advice" style="padding:60px 0; background:#f9f9f9;">
+
+<!-- PROFESSIONAL ADVICE -->
+<section id="professional-advice">
   <h2 style="
     text-align:center;
     margin-bottom:35px;
@@ -716,93 +700,175 @@ style="
     color:#0b3d91;
     text-shadow:0 3px 12px rgba(0,0,0,0.1);
   ">
-    Professional Advice
+    Professional Advice for Your Excavation & Septic Project
   </h2>
 
   <div class="advice-grid">
     <div class="advice-card">
-      <h3>Expert Insight</h3>
+      <h3>Expert Site Insight</h3>
       <p>
-        Get clear, actionable guidance tailored to your project needs. Whether you're planning a major excavation or optimizing workflow, our expertise helps you make confident decisions.
+        Get clear, actionable guidance tailored to your property. From septic system layout to drainage and grading,
+        we help you understand what’s underground before the first bucket of soil is moved.
       </p>
     </div>
 
     <div class="advice-card">
-      <h3>Project Planning</h3>
+      <h3>Project Planning & Budgeting</h3>
       <p>
-        Understand timelines, budgeting, and best practices before breaking ground. We help you map out each step to ensure efficiency and long‑term success.
+        We walk you through realistic timelines, permitting considerations, and cost ranges for excavation and septic work in Connecticut,
+        so you can plan with confidence and avoid surprises.
       </p>
     </div>
 
     <div class="advice-card">
-      <h3>Professional Recommendations</h3>
+      <h3>Honest Recommendations</h3>
       <p>
-        Receive honest, experience‑backed recommendations on equipment, materials, and strategies that maximize value and minimize risk.
+        We provide straightforward, experience-backed recommendations on repairs vs. replacement, material choices, and long-term solutions
+        that protect your home, yard, and investment.
       </p>
     </div>
   </div>
 </section>
 
-<style>
-  .advice-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-    font-family: 'Poppins', sans-serif;
-  }
+<!-- PHOTOS -->
+<section id="photos">
+  <h2 style="
+    text-align:center;
+    margin-bottom:35px;
+    font-family:'Poppins',sans-serif;
+    font-size:2.6rem;
+    font-weight:800;
+    color:#0b3d91;
+    text-shadow:0 3px 12px rgba(0,0,0,0.1);
+  ">
+    Project Photos: Excavation & Septic Work in CT
+  </h2>
 
-  .advice-card {
-    background: white;
-    padding: 25px;
-    border-radius: 14px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.12);
-    transition: all 0.35s ease;
-    cursor: pointer;
-    border: 2px solid transparent;
+  <div class="photos-grid">
 
-    /* Start hidden for mobile animation */
-    opacity: 0;
-    transform: translateY(20px);
-  }
+    <div class="photo-item">
+      <div class="photo"
+           style="background-image:url('https://i.ibb.co/RG49Jk45/IMG-3772.jpg');"
+           aria-label="Excavation before installation of D-Box for septic system in Connecticut">
+      </div>
+      <p class="photo-desc">Before installation of D-Box for septic repair</p>
+    </div>
 
-  /* Desktop hover effect */
-  @media (hover: hover) {
-    .advice-card:hover {
-      transform: translateY(-10px) scale(1.03);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.18);
-      border-color: #ffcc00;
-    }
-  }
+    <div class="photo-item">
+      <div class="photo"
+           style="background-image:url('https://i.ibb.co/bM9bzLfD/IMG-3776.jpg');"
+           aria-label="Completed D-Box installation for septic system in Central Connecticut">
+      </div>
+      <p class="photo-desc">After installation of D-Box – septic system upgrade</p>
+    </div>
 
-  /* Mobile + desktop "in-view" animation */
-  .advice-card.in-view {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    <div class="photo-item">
+      <div class="photo"
+           style="background-image:url('https://i.ibb.co/8nrhyY7T/IMG-8357.jpg');"
+           aria-label="Leveling and grading leaching field for septic system in CT">
+      </div>
+      <p class="photo-desc">Leveling out the leaching field for proper drainage</p>
+    </div>
 
-  .advice-card h3 {
-    text-align: center;
-    margin-bottom: 12px;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #0b3d91;
-  }
+    <div class="photo-item">
+      <div class="photo"
+           style="background-image:url('https://i.ibb.co/CKhyTxrf/IMG-8358.jpg');"
+           aria-label="Septic tank installation excavation project in Connecticut">
+      </div>
+      <p class="photo-desc">Septic tank installation – excavation and placement</p>
+    </div>
 
-  .advice-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #333;
-  }
-</style>
+    <div class="photo-item">
+      <div class="photo"
+           style="background-image:url('https://i.ibb.co/hRYwnksp/IMG-0241.avif');"
+           aria-label="Material removal and top layer excavation in Central CT">
+      </div>
+      <p class="photo-desc">Material removal – top layer removed to prepare site</p>
+    </div>
+
+    <div class="photo-item">
+      <div class="photo"
+           style="background-image:url('https://i.ibb.co/ynzvyn9B/IMG-0247.avif');"
+           aria-label="Excavation depth nearing target grade for CT project">
+      </div>
+      <p class="photo-desc">Material removal – depth nearly at target grade</p>
+    </div>
+
+    <div class="photo-item">
+      <div class="photo"
+           style="background-image:url('https://i.ibb.co/KzbD687D/IMG-0250.avif');"
+           aria-label="Excavation ramp for equipment access on Connecticut job site">
+      </div>
+      <p class="photo-desc">Material removal – ramp created for safe access</p>
+    </div>
+
+    <div class="photo-item">
+      <div class="photo"
+           style="background-image:url('https://i.ibb.co/kYcvmr9/IMG-0251.avif');"
+           aria-label="Completed material removal and excavation in Central Connecticut">
+      </div>
+      <p class="photo-desc">Material removal – all material removed and site cleared</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact-section">
+  <h2>Contact Affordable Enterprises LLC</h2>
+
+  <div class="contact-details" aria-live="polite">
+    <p>📍 Central Connecticut – Excavation & Septic Services</p>
+    <p>📲 <a href="tel:8603651092" class="contact-link">Call (860) 365-1092</a></p>
+    <p>📧 <a href="mailto:affordableenterprise@yahoo.com" class="contact-link">
+      affordableenterprise@yahoo.com
+    </a></p>
+    <p>Need excavation, septic repair, grading, or skid steer work? Reach out today for a quote.</p>
+  </div>
+
+  <div class="contact-logo">
+    <img src="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png"
+         alt="Affordable Enterprises LLC excavation and septic logo">
+  </div>
+</section>
+
+<footer>
+  <p>&copy; 2026 Affordable Enterprises LLC | Excavation & Septic Services in Central Connecticut | All Rights Reserved</p>
+</footer>
 
 <script>
-  // Intersection Observer for mobile + desktop reveal animation
   document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.getElementById("sideNav");
+    const toggle = document.getElementById("navToggle");
+    const hint = document.getElementById("navHint");
+    const btn = document.getElementById("contactBtn");
     const cards = document.querySelectorAll(".advice-card");
+    const photos = document.querySelectorAll(".photo");
 
+    // Toggle side nav
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("open");
+    });
+
+    nav.addEventListener("click", () => {
+      nav.classList.remove("open");
+    });
+
+    // Hint popup
+    setTimeout(() => {
+      hint.classList.add("show");
+    }, 300);
+
+    setTimeout(() => {
+      hint.classList.remove("show");
+    }, 3300);
+
+    // Show floating contact button
+    setTimeout(() => {
+      btn.classList.add("show");
+    }, 3400);
+
+    // Intersection Observer for advice cards
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -812,165 +878,11 @@ style="
     }, { threshold: 0.3 });
 
     cards.forEach(card => observer.observe(card));
-  });
-</script>
-  
-  <!-- Photos Section -->
-<section id="photos" style="padding:60px 0; background:#ffffff;">
-  <h2 style="
-    text-align:center;
-    margin-bottom:35px;
-    font-family:'Poppins',sans-serif;
-    font-size:2.6rem;
-    font-weight:800;
-    color:#0b3d91;
-    text-shadow:0 3px 12px rgba(0,0,0,0.1);
-  ">
-    Photos
-  </h2>
 
-  <div class="photos-grid">
-
-  <!-- Photo 1 -->
-  <div class="photo-item">
-    <div class="photo" style="background-image:url('https://i.ibb.co/RG49Jk45/IMG-3772.jpg');"></div>
-    <p class="photo-desc">Before installation of D-Box</p>
-  </div>
-
-  <!-- Photo 2 -->
-  <div class="photo-item">
-    <div class="photo" style="background-image:url('https://i.ibb.co/bM9bzLfD/IMG-3776.jpg');"></div>
-    <p class="photo-desc">After installation of D-Box</p>
-  </div>
-
-  <!-- Photo 3 -->
-  <div class="photo-item">
-    <div class="photo" style="background-image:url('https://i.ibb.co/8nrhyY7T/IMG-8357.jpg');"></div>
-    <p class="photo-desc">Leveling out the leaching field</p>
-  </div>
-
-  <!-- Photo 4 -->
-  <div class="photo-item">
-    <div class="photo" style="background-image:url('https://i.ibb.co/CKhyTxrf/IMG-8358.jpg');"></div>
-    <p class="photo-desc">Septic tank installation</p>
-  </div>
-
-  <!-- Photo 5 -->
-  <div class="photo-item">
-    <div class="photo" style="background-image:url('https://i.ibb.co/hRYwnksp/IMG-0241.avif');"></div>
-    <p class="photo-desc">Material removal - Top layer removed</p>
-  </div>
-
-  <!-- Photo 6 -->
-  <div class="photo-item">
-    <div class="photo" style="background-image:url('https://i.ibb.co/ynzvyn9B/IMG-0247.avif');"></div>
-    <p class="photo-desc">Material removal – Depth nearly at target grade </p>
-  </div>
-
-  <!-- Photo 7 -->
-  <div class="photo-item">
-    <div class="photo" style="background-image:url('https://i.ibb.co/KzbD687D/IMG-0250.avif');"></div>
-    <p class="photo-desc">Material removal - Ramp for access</p>
-  </div>
-
-  <!-- Photo 8 -->
-  <div class="photo-item">
-    <div class="photo" style="background-image:url('https://i.ibb.co/kYcvmr9/IMG-0251.avif');"></div>
-    <p class="photo-desc">Material removal - All material removed</p>
-  </div>
-
-</div> 
-</section>
-
-<style>
-  .photos-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 25px;
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-
-  .photo {
-    width: 100%;
-    height: 260px;
-    background-size: cover;
-    background-position: center;
-    border-radius: 14px;
-    box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-    cursor: pointer;
-    transition: all 0.35s ease;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 0.8s ease forwards;
-  }
-
-  .photo:hover {
-    transform: scale(1.05);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.25), 0 0 12px rgba(255,204,0,0.4);
-    border: 2px solid #ffcc00;
-  }
-  
-
-  /* Fade-in animation */
-  @keyframes fadeInUp {
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  /* Lightbox overlay */
-  .lightbox-overlay {
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.85);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2000;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s ease;
-  }
-
-  .lightbox-overlay.show {
-    opacity: 1;
-    pointer-events: auto;
-  }
-
-  .lightbox-image {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 12px;
-    box-shadow: 0 0 25px rgba(255,255,255,0.3);
-  }
-  <style>
-  .photo-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .photo-desc {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #333;
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-  }
-</style>
-
-<script>
-  // Lightbox functionality
-  document.addEventListener("DOMContentLoaded", () => {
-    const photos = document.querySelectorAll(".photo");
-
-    // Create overlay
+    // Lightbox for photos
     const overlay = document.createElement("div");
     overlay.className = "lightbox-overlay";
-    overlay.innerHTML = `<img class="lightbox-image" src="">`;
+    overlay.innerHTML = `<img class="lightbox-image" src="" alt="Expanded project photo from Affordable Enterprises LLC">`;
     document.body.appendChild(overlay);
 
     const overlayImg = overlay.querySelector(".lightbox-image");
@@ -988,131 +900,6 @@ style="
     });
   });
 </script>
-   
-<!-- Contact Section -->
-<section id="contact" class="contact-section">
-  <h2>Contact Us</h2>
 
-  <div class="contact-details" aria-live="polite">
-    <p>📍 Central CT</p>
-    <p>📲 <a href="tel:8603651092" class="contact-link">(860) 365-1092</a></p>
-    <p>📧 <a href="mailto:affordableenterprise@yahoo.com" class="contact-link">
-      affordableenterprise@yahoo.com
-    </a></p>
-  </div>
-
-  <!-- Logo added to fill the space -->
-  <div class="contact-logo">
-    <img src="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png" alt="Affordable Enterprises Logo">
-  </div>
-</section>
-
-<style>
-  .contact-section {
-    text-align: center;
-    font-family: 'Poppins', sans-serif;
-    background: #ffffff;
-    padding: 20px 10px 10px 10px; /* very compact */
-    border-top: 3px solid #ffcc00;
-  }
-
-  .contact-section h2 {
-    font-size: 2rem;
-    margin: 0 0 8px 0;
-    font-weight: 800;
-    color: #0b3d91;
-  }
-
-  .contact-details {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #222;
-    line-height: 1.6;
-    margin-bottom: 10px;
-  }
-
-  .contact-details p {
-    margin: 4px 0;
-  }
-
-  .contact-link {
-    color: #0b3d91;
-    text-decoration: none;
-    font-weight: 700;
-    position: relative;
-  }
-
-  .contact-link::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -1px;
-    width: 0%;
-    height: 2px;
-    background: #ffcc00;
-    transition: width 0.3s ease;
-    border-radius: 2px;
-  }
-
-  .contact-link:hover::after {
-    width: 100%;
-  }
-
-  /* Logo styling */
-  .contact-logo {
-    margin-top: 10px;
-    margin-bottom: 0;
-  }
-
-  .contact-logo img {
-    width: 120px; /* perfect size */
-    height: auto;
-    opacity: 0.95;
-    display: block;
-    margin: 0 auto;
-  }
-</style>
-  
-  <!-- Footer -->
-<footer>
-  <p>&copy; 2026 Affordable Enterprises LLC | All Rights Reserved</p>
-</footer>
-  
-  <!-- Footer styler -->
-  <style>
-    footer {
-      background: #333;
-      color: white;
-      text-align: center;
-      padding: 20px;
-      font-family: 'Poppins', sans-serif;
-    }
-    </style>
-  <!-- Disabled 
-  <div id="leadModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="leadModalTitle">
-    <div class="modal" role="document">
-      <h3 id="leadModalTitle">Interested in Working With Us?</h3>
-      <p>Leave your name, email, and phone and we'll get back to you quickly.</p>
-
-      <form id="leadForm">
-        <label for="leadName">Full name</label>
-        <input id="leadName" name="name" type="text" placeholder="Jane Doe" required />
-
-        <label for="leadEmail">Email</label>
-        <input id="leadEmail" name="email" type="email" placeholder="you@example.com" required />
-
-        <label for="leadPhone">Phone</label>
-        <input id="leadPhone" name="phone" type="tel" placeholder="(860) 555-1234" required />
-
-        <div class="actions">
-          <button type="button" class="btn btn-ghost" id="leadDismiss">Not now</button>
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-      </form>
-
-      <p id="leadThanks" style="display:none; margin-top:12px; color:green;">Thanks! We'll be in touch shortly.</p>
-    </div>
-  </div>
-  -->
 </body>
 </html>

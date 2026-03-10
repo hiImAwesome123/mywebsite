@@ -1,674 +1,284 @@
-<!doctype html>
-<html lang="en" class="h-full">
- <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Affordable Swimming Pools</title>
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script src="/_sdk/element_sdk.js"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&amp;family=Source+Sans+3:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+
+  <title>DIY Fiberglass Pool Installation | Excavation Support in Connecticut</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Learn how to install a DIY fiberglass swimming pool and save thousands. Affordable Enterprises LLC provides excavation, grading, and site prep services across Connecticut to support your fiberglass pool installation project.">
+  <meta name="keywords" content="DIY fiberglass pool, fiberglass pool installation CT, pool excavation CT, how to install fiberglass pool, affordable pool installation, Connecticut excavation services, backyard pool installation, pool site prep CT">
+  <link rel="canonical" href="https://www.affordableenterprisesllc.com/future.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "DIY Fiberglass Pool Installation Guide",
+    "description": "Step-by-step guide to installing a DIY fiberglass swimming pool with excavation support from Affordable Enterprises LLC in Connecticut.",
+    "author": {
+      "@type": "Organization",
+      "name": "Affordable Enterprises LLC"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Affordable Enterprises LLC",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://i.postimg.cc/TP3HtrM7/excavatorlogo.png"
+      }
+    },
+    "mainEntityOfPage": "https://www.affordableenterprisesllc.com/future.html"
+  }
+  </script>
+
   <style>
-    :root {
-      --color-background: #0a1628;
-      --color-surface: #1a3a5c;
-      --color-text: #f0f7ff;
-      --color-primary: #00b4d8;
-      --color-secondary: #48cae4;
-    }
-    html, body {
-      height: 100%;
+    body {
       margin: 0;
+      padding: 0;
+      background: #1a1a1a;
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      line-height: 1.6;
     }
-    .font-display { font-family: 'Playfair Display', Georgia, serif; }
-    .font-body { font-family: 'Source Sans 3', -apple-system, sans-serif; }
-    
-    .water-gradient {
-      background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 50%, #0d2847 100%);
+
+    /* Top bar */
+    .top-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 65px;
+      background: rgba(51,51,51,0);
+      display: flex;
+      align-items: center;
+      padding-left: 20px;
+      z-index: 1000;
     }
-    
-    .wave-pattern {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%2300b4d8' fill-opacity='0.1' d='M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,181.3C960,203,1056,213,1152,197.3C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-      background-size: cover;
-      background-position: bottom;
+
+    .logo {
+      height: 45px;
+      width: auto;
+      cursor: pointer;
     }
-    
-    .shimmer {
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-      animation: shimmer 3s infinite;
+
+    /* Fullscreen cover */
+    .enter-cover {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #000000e6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+      backdrop-filter: blur(6px);
     }
-    
-    @keyframes shimmer {
-      0% { transform: translateX(-100%); }
-      100% { transform: translateX(100%); }
+
+    .enter-box {
+      text-align: center;
+      color: white;
+      padding: 20px;
     }
-    
-    .float-animation {
-      animation: float 6s ease-in-out infinite;
+
+    .enter-box h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
     }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
+
+    .enter-box p {
+      font-size: 1.2rem;
+      opacity: 0.85;
+      margin-bottom: 25px;
     }
-    
-    .ripple {
-      position: relative;
-      overflow: hidden;
+
+    .enter-btn {
+      padding: 12px 28px;
+      font-size: 1.2rem;
+      background: #ffcc00;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s ease;
     }
-    
-    .ripple::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at center, rgba(0,180,216,0.2) 0%, transparent 70%);
-      animation: ripple 4s ease-in-out infinite;
+
+    .enter-btn:hover {
+      background: #e6b800;
     }
-    
-    @keyframes ripple {
-      0%, 100% { transform: scale(1); opacity: 0.5; }
-      50% { transform: scale(1.1); opacity: 0.8; }
+
+    /* Page content */
+    .pool-container {
+      max-width: 900px;
+      margin: 120px auto 60px;
+      padding: 0 20px;
     }
-    
-    .card-hover {
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+    h1 {
+      font-size: 2.6rem;
+      margin-bottom: 10px;
+      text-align: center;
+      color: #ffcc00;
     }
-    
-    .card-hover:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 20px 40px rgba(0,180,216,0.2);
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.2rem;
+      opacity: 0.85;
+      margin-bottom: 40px;
     }
-    
-    .step-line {
-      background: linear-gradient(to bottom, #00b4d8 0%, #48cae4 100%);
+
+    .content-section {
+      margin-bottom: 40px;
     }
-    
-    .glass-effect {
-      background: rgba(26, 58, 92, 0.6);
-      backdrop-filter: blur(10px);
-      border: 1px solid rgba(72, 202, 228, 0.2);
+
+    h2 {
+      font-size: 1.9rem;
+      margin-bottom: 10px;
+      color: #ffcc00;
     }
-    
-    .pool-svg {
-      filter: drop-shadow(0 4px 20px rgba(0,180,216,0.3));
+
+    p, li {
+      font-size: 1.15rem;
+    }
+
+    ul, ol {
+      margin-left: 20px;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-family: 'Poppins', sans-serif;
+      margin-top: 40px;
     }
   </style>
-  <style>body { box-sizing: border-box; }</style>
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body class="h-full font-body water-gradient text-[var(--color-text)] overflow-auto">
-  <div class="min-h-full w-full"><!-- Navigation -->
-   <nav class="glass-effect sticky top-0 z-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-     <div class="flex items-center justify-between">
-      <div class="flex items-center gap-3">
-       <svg class="w-10 h-10 pool-svg" viewbox="0 0 48 48" fill="none"><ellipse cx="24" cy="28" rx="20" ry="12" fill="url(#poolGrad)" /> <path d="M4 28c0-6.627 8.954-12 20-12s20 5.373 20 12" stroke="#48cae4" stroke-width="2" fill="none" /> <path d="M8 26c4 2 8-2 12 0s8-2 12 0s8 2 12 0" stroke="#fff" stroke-width="1.5" stroke-linecap="round" opacity="0.6" /> <defs>
-         <lineargradient id="poolGrad" x1="4" y1="28" x2="44" y2="28">
-          <stop offset="0%" stop-color="#00b4d8" />
-          <stop offset="100%" stop-color="#0077b6" />
-         </lineargradient>
-        </defs>
-       </svg><span id="nav-company" class="font-display text-xl font-semibold text-[var(--color-secondary)]">Affordable Swimming Pools</span>
-      </div><a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-[var(--color-background)] font-semibold rounded-full transition-all duration-300 hover:scale-105"> <span id="nav-cta">Get a Quote</span>
-       <svg class="w-4 h-4" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-       </svg></a>
-     </div>
-    </div>
-   </nav><!-- Hero Section -->
-   <header class="relative py-20 lg:py-32 overflow-hidden">
-    <div class="absolute inset-0 wave-pattern opacity-30"></div>
-    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <div class="text-center lg:text-left">
-       <div class="inline-flex items-center gap-2 px-4 py-2 glass-effect rounded-full mb-6"><span class="w-2 h-2 bg-[var(--color-primary)] rounded-full animate-pulse"></span> <span class="text-sm font-medium text-[var(--color-secondary)]">Save Thousands on Your Pool</span>
-       </div>
-       <h1 id="hero-title" class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-4"><span class="text-[var(--color-text)]">Affordable</span> <span class="text-[var(--color-primary)]"> Swimming Pools</span></h1>
-       <p id="hero-tagline" class="text-xl sm:text-2xl text-[var(--color-secondary)] font-light mb-6">Homeowner Assisted Fiberglass Pool Installation</p>
-       <p class="text-lg text-[var(--color-text)] opacity-80 mb-8 max-w-xl mx-auto lg:mx-0">We believe owning a backyard swimming pool should be affordable for everyday homeowners. Combine your effort with our expertise to save thousands.</p>
-       <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"><a href="#contact" id="hero-cta" class="inline-flex items-center justify-center gap-2 px-8 py-4 bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-[var(--color-background)] font-semibold rounded-full transition-all duration-300 hover:scale-105 text-lg"> Request a Quote 
-         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-         </svg></a> <a href="#process" class="inline-flex items-center justify-center gap-2 px-8 py-4 glass-effect hover:bg-[var(--color-surface)] rounded-full transition-all duration-300 font-medium"> Learn How It Works </a>
-       </div>
-      </div>
-      <div class="relative float-animation">
-       <svg class="w-full max-w-lg mx-auto pool-svg" viewbox="0 0 400 300" fill="none"><!-- Pool shape --> <ellipse cx="200" cy="180" rx="160" ry="80" fill="url(#heroPoolGrad)" /> <ellipse cx="200" cy="180" rx="140" ry="65" fill="url(#heroWaterGrad)" /> <!-- Water ripples --> <ellipse cx="200" cy="180" rx="100" ry="45" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" /> <ellipse cx="200" cy="180" rx="60" ry="25" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1" /> <!-- Deck --> <path d="M30 180 Q30 100 200 100 Q370 100 370 180" fill="none" stroke="#48cae4" stroke-width="3" /> <!-- Ladder --> <rect x="320" y="140" width="6" height="50" rx="2" fill="#48cae4" /> <rect x="338" y="140" width="6" height="50" rx="2" fill="#48cae4" /> <rect x="318" y="150" width="28" height="4" rx="1" fill="#48cae4" /> <rect x="318" y="165" width="28" height="4" rx="1" fill="#48cae4" /> <!-- Sun reflection --> <ellipse cx="150" cy="170" rx="30" ry="10" fill="rgba(255,255,255,0.15)" /> <!-- Plants --> <circle cx="60" cy="130" r="25" fill="#0d5c3f" /> <circle cx="75" cy="120" r="20" fill="#0a7c4f" /> <circle cx="340" cy="125" r="22" fill="#0d5c3f" /> <circle cx="355" cy="115" r="18" fill="#0a7c4f" /> <defs>
-         <lineargradient id="heroPoolGrad" x1="40" y1="180" x2="360" y2="180">
-          <stop offset="0%" stop-color="#1a3a5c" />
-          <stop offset="100%" stop-color="#0d2847" />
-         </lineargradient>
-         <lineargradient id="heroWaterGrad" x1="60" y1="120" x2="340" y2="240">
-          <stop offset="0%" stop-color="#00b4d8" />
-          <stop offset="50%" stop-color="#0096c7" />
-          <stop offset="100%" stop-color="#0077b6" />
-         </lineargradient>
-        </defs>
-       </svg>
-      </div>
-     </div>
-    </div>
-   </header><!-- How It Works Banner -->
-   <section class="py-8 bg-[var(--color-surface)]">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="flex flex-wrap justify-center gap-8 lg:gap-16 text-center">
-      <div class="flex items-center gap-3">
-       <div class="w-12 h-12 rounded-full bg-[var(--color-primary)] bg-opacity-20 flex items-center justify-center">
-        <svg class="w-6 h-6 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-       </div><span class="font-medium">Save Thousands</span>
-      </div>
-      <div class="flex items-center gap-3">
-       <div class="w-12 h-12 rounded-full bg-[var(--color-primary)] bg-opacity-20 flex items-center justify-center">
-        <svg class="w-6 h-6 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-       </div><span class="font-medium">Faster Installation</span>
-      </div>
-      <div class="flex items-center gap-3">
-       <div class="w-12 h-12 rounded-full bg-[var(--color-primary)] bg-opacity-20 flex items-center justify-center">
-        <svg class="w-6 h-6 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-        </svg>
-       </div><span class="font-medium">Professional Quality</span>
-      </div>
-      <div class="flex items-center gap-3">
-       <div class="w-12 h-12 rounded-full bg-[var(--color-primary)] bg-opacity-20 flex items-center justify-center">
-        <svg class="w-6 h-6 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
-        </svg>
-       </div><span class="font-medium">Expert Guidance</span>
-      </div>
-     </div>
-    </div>
-   </section><!-- About Section -->
-   <section class="py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="max-w-3xl mx-auto text-center mb-16">
-      <h2 class="font-display text-3xl sm:text-4xl font-bold mb-6">Our Homeowner Assisted Pool Installation Program</h2>
-      <p class="text-lg text-[var(--color-text)] opacity-80">Instead of paying full contractor labor costs, homeowners work alongside experienced professionals to reduce the total project cost. By combining your effort with our experience, you can save thousands of dollars while installing a high-quality fiberglass swimming pool.</p>
-     </div>
-     <div class="grid md:grid-cols-3 gap-8">
-      <div class="glass-effect rounded-2xl p-8 card-hover text-center">
-       <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--color-primary)] bg-opacity-20 flex items-center justify-center">
-        <svg class="w-8 h-8 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-       </div>
-       <h3 class="font-display text-xl font-semibold mb-3">Sweat Equity Savings</h3>
-       <p class="text-[var(--color-text)] opacity-70">Contribute your own labor to significantly reduce overall installation costs.</p>
-      </div>
-      <div class="glass-effect rounded-2xl p-8 card-hover text-center">
-       <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--color-primary)] bg-opacity-20 flex items-center justify-center">
-        <svg class="w-8 h-8 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
-        </svg>
-       </div>
-       <h3 class="font-display text-xl font-semibold mb-3">Expert Guidance</h3>
-       <p class="text-[var(--color-text)] opacity-70">Professional expertise during excavation, installation, and plumbing stages.</p>
-      </div>
-      <div class="glass-effect rounded-2xl p-8 card-hover text-center">
-       <div class="w-16 h-16 mx-auto mb-6 rounded-full bg-[var(--color-primary)] bg-opacity-20 flex items-center justify-center">
-        <svg class="w-8 h-8 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-        </svg>
-       </div>
-       <h3 class="font-display text-xl font-semibold mb-3">Quality Results</h3>
-       <p class="text-[var(--color-text)] opacity-70">Professional-grade pool installation at a fraction of the typical cost.</p>
-      </div>
-     </div>
-    </div>
-   </section><!-- Pool Gallery Section -->
-   <section class="py-20 lg:py-28 bg-[var(--color-surface)] bg-opacity-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="text-center mb-16">
-      <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Beautiful Fiberglass Pools for Your Backyard</h2>
-      <p class="text-lg text-[var(--color-text)] opacity-80 max-w-2xl mx-auto">Fiberglass pools create clean, modern backyard environments while offering excellent durability and long-term value.</p>
-     </div>
-     <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"><!-- Pool Card 1 -->
-      <div class="group relative rounded-2xl overflow-hidden card-hover aspect-[4/3]">
-       <div class="absolute inset-0 bg-gradient-to-br from-[#0077b6] to-[#00b4d8] ripple">
-        <svg class="w-full h-full opacity-30" viewbox="0 0 200 150" fill="none"><rect x="20" y="40" width="160" height="90" rx="10" fill="rgba(255,255,255,0.1)" /> <ellipse cx="100" cy="85" rx="60" ry="30" fill="rgba(255,255,255,0.2)" /> <path d="M30 75 Q65 65 100 75 T170 75" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none" /> <rect x="150" y="50" width="20" height="60" rx="4" fill="rgba(255,255,255,0.15)" />
-        </svg>
-       </div>
-       <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-background)] via-transparent to-transparent opacity-80"></div>
-       <div class="absolute bottom-0 left-0 right-0 p-4">
-        <h3 class="font-display font-semibold text-lg">Pool with Patio</h3>
-        <p class="text-sm text-[var(--color-secondary)]">Classic backyard design</p>
-       </div>
-      </div><!-- Pool Card 2 -->
-      <div class="group relative rounded-2xl overflow-hidden card-hover aspect-[4/3]">
-       <div class="absolute inset-0 bg-gradient-to-br from-[#0096c7] to-[#48cae4] ripple">
-        <svg class="w-full h-full opacity-30" viewbox="0 0 200 150" fill="none"><path d="M30 60 Q100 30 170 60 L170 120 Q100 140 30 120 Z" fill="rgba(255,255,255,0.15)" /> <ellipse cx="100" cy="90" rx="55" ry="25" fill="rgba(255,255,255,0.2)" /> <circle cx="50" cy="50" r="15" fill="rgba(10,100,60,0.4)" /> <circle cx="150" cy="45" r="12" fill="rgba(10,100,60,0.4)" /> <path d="M40 85 Q70 80 100 85 T160 85" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none" />
-        </svg>
-       </div>
-       <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-background)] via-transparent to-transparent opacity-80"></div>
-       <div class="absolute bottom-0 left-0 right-0 p-4">
-        <h3 class="font-display font-semibold text-lg">Modern Landscaping</h3>
-        <p class="text-sm text-[var(--color-secondary)]">Contemporary styling</p>
-       </div>
-      </div><!-- Pool Card 3 -->
-      <div class="group relative rounded-2xl overflow-hidden card-hover aspect-[4/3]">
-       <div class="absolute inset-0 bg-gradient-to-br from-[#023e8a] to-[#0077b6] ripple">
-        <svg class="w-full h-full opacity-30" viewbox="0 0 200 150" fill="none"><rect x="25" y="35" width="150" height="95" rx="8" fill="rgba(255,255,255,0.1)" /> <ellipse cx="100" cy="82" rx="50" ry="25" fill="rgba(255,255,255,0.2)" /> <circle cx="45" cy="55" r="8" fill="rgba(255,200,100,0.5)" /> <circle cx="155" cy="55" r="8" fill="rgba(255,200,100,0.5)" /> <circle cx="100" cy="40" r="6" fill="rgba(255,200,100,0.4)" /> <path d="M50 78 Q75 72 100 78 T150 78" stroke="rgba(255,255,255,0.3)" stroke-width="2" fill="none" />
-        </svg>
-       </div>
-       <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-background)] via-transparent to-transparent opacity-80"></div>
-       <div class="absolute bottom-0 left-0 right-0 p-4">
-        <h3 class="font-display font-semibold text-lg">Evening Lighting</h3>
-        <p class="text-sm text-[var(--color-secondary)]">Outdoor ambiance</p>
-       </div>
-      </div><!-- Pool Card 4 -->
-      <div class="group relative rounded-2xl overflow-hidden card-hover aspect-[4/3]">
-       <div class="absolute inset-0 bg-gradient-to-br from-[#00b4d8] to-[#90e0ef] ripple">
-        <svg class="w-full h-full opacity-30" viewbox="0 0 200 150" fill="none"><ellipse cx="100" cy="85" rx="70" ry="40" fill="rgba(255,255,255,0.15)" /> <ellipse cx="100" cy="85" rx="55" ry="28" fill="rgba(255,255,255,0.2)" /> <circle cx="70" cy="75" r="10" fill="rgba(255,100,150,0.3)" /> <circle cx="130" cy="75" r="10" fill="rgba(100,200,255,0.3)" /> <path d="M45 82 Q72 75 100 82 T155 82" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none" /> <rect x="20" y="100" width="30" height="20" rx="3" fill="rgba(255,255,255,0.15)" /> <rect x="150" y="100" width="30" height="20" rx="3" fill="rgba(255,255,255,0.15)" />
-        </svg>
-       </div>
-       <div class="absolute inset-0 bg-gradient-to-t from-[var(--color-background)] via-transparent to-transparent opacity-80"></div>
-       <div class="absolute bottom-0 left-0 right-0 p-4">
-        <h3 class="font-display font-semibold text-lg">Family Design</h3>
-        <p class="text-sm text-[var(--color-secondary)]">Fun for everyone</p>
-       </div>
-      </div>
-     </div>
-     <p class="text-center mt-8 text-[var(--color-text)] opacity-70 max-w-2xl mx-auto">Homeowners appreciate fiberglass pools for their smooth surface, low maintenance requirements, and long lifespan. Because they're manufactured in a factory and delivered ready for installation, they can often be installed much faster than traditional concrete pools.</p>
-    </div>
-   </section><!-- Installation Process Section -->
-   <section id="process" class="py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="text-center mb-16">
-      <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Fiberglass Pool Installation Process</h2>
-      <p class="text-lg text-[var(--color-text)] opacity-80 max-w-2xl mx-auto">Fiberglass pools arrive as a completed shell and are installed into a professionally excavated area.</p>
-     </div>
-     <div class="relative"><!-- Timeline line -->
-      <div class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-1 step-line transform -translate-x-1/2 rounded-full"></div>
-      <div class="space-y-8 lg:space-y-0"><!-- Step 1 -->
-       <div class="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-        <div class="lg:text-right lg:pr-12">
-         <div class="glass-effect rounded-2xl p-6 card-hover inline-block w-full max-w-md">
-          <div class="flex items-center gap-4 lg:flex-row-reverse">
-           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center font-display font-bold text-xl text-[var(--color-background)]">
-            1
-           </div>
-           <div class="lg:text-right">
-            <h3 class="font-display text-xl font-semibold mb-2">Site Planning &amp; Pool Selection</h3>
-            <p class="text-[var(--color-text)] opacity-70">We help you choose the right fiberglass pool design for your yard and budget.</p>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="hidden lg:block"></div>
-       </div><!-- Step 2 -->
-       <div class="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-        <div class="hidden lg:block"></div>
-        <div class="lg:pl-12">
-         <div class="glass-effect rounded-2xl p-6 card-hover inline-block w-full max-w-md">
-          <div class="flex items-center gap-4">
-           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center font-display font-bold text-xl text-[var(--color-background)]">
-            2
-           </div>
-           <div>
-            <h3 class="font-display text-xl font-semibold mb-2">Excavation &amp; Site Preparation</h3>
-            <p class="text-[var(--color-text)] opacity-70">Our team performs professional excavation and prepares the site.</p>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div><!-- Step 3 -->
-       <div class="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-        <div class="lg:text-right lg:pr-12">
-         <div class="glass-effect rounded-2xl p-6 card-hover inline-block w-full max-w-md">
-          <div class="flex items-center gap-4 lg:flex-row-reverse">
-           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center font-display font-bold text-xl text-[var(--color-background)]">
-            3
-           </div>
-           <div class="lg:text-right">
-            <h3 class="font-display text-xl font-semibold mb-2">Pool Delivery &amp; Placement</h3>
-            <p class="text-[var(--color-text)] opacity-70">The fiberglass pool shell is delivered and carefully placed into the excavation.</p>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="hidden lg:block"></div>
-       </div><!-- Step 4 -->
-       <div class="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-        <div class="hidden lg:block"></div>
-        <div class="lg:pl-12">
-         <div class="glass-effect rounded-2xl p-6 card-hover inline-block w-full max-w-md">
-          <div class="flex items-center gap-4">
-           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center font-display font-bold text-xl text-[var(--color-background)]">
-            4
-           </div>
-           <div>
-            <h3 class="font-display text-xl font-semibold mb-2">Plumbing &amp; Equipment</h3>
-            <p class="text-[var(--color-text)] opacity-70">We assist with plumbing connections, leveling, and backfilling.</p>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div><!-- Step 5 -->
-       <div class="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-        <div class="lg:text-right lg:pr-12">
-         <div class="glass-effect rounded-2xl p-6 card-hover inline-block w-full max-w-md">
-          <div class="flex items-center gap-4 lg:flex-row-reverse">
-           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center font-display font-bold text-xl text-[var(--color-background)]">
-            5
-           </div>
-           <div class="lg:text-right">
-            <h3 class="font-display text-xl font-semibold mb-2">Homeowner Assisted Tasks</h3>
-            <p class="text-[var(--color-text)] opacity-70">Homeowners assist with certain tasks to reduce labor costs.</p>
-           </div>
-          </div>
-         </div>
-        </div>
-        <div class="hidden lg:block"></div>
-       </div><!-- Step 6 -->
-       <div class="relative lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-        <div class="hidden lg:block"></div>
-        <div class="lg:pl-12">
-         <div class="glass-effect rounded-2xl p-6 card-hover inline-block w-full max-w-md">
-          <div class="flex items-center gap-4">
-           <div class="flex-shrink-0 w-12 h-12 rounded-full bg-[var(--color-primary)] flex items-center justify-center font-display font-bold text-xl text-[var(--color-background)]">
-            6
-           </div>
-           <div>
-            <h3 class="font-display text-xl font-semibold mb-2">Final Grading &amp; Preparation</h3>
-            <p class="text-[var(--color-text)] opacity-70">Final grading and preparation for decking or landscaping.</p>
-           </div>
-          </div>
-         </div>
-        </div>
-       </div>
-      </div>
-     </div>
-     <p class="text-center mt-12 text-lg text-[var(--color-secondary)]">Because the pool shell is already built, installation time is usually much faster than other types of inground pools.</p>
-    </div>
-   </section><!-- Benefits Section -->
-   <section class="py-20 lg:py-28 bg-[var(--color-surface)] bg-opacity-50">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="text-center mb-16">
-      <h2 class="font-display text-3xl sm:text-4xl font-bold mb-4">Why We Recommend Fiberglass Pools</h2>
-      <p class="text-lg text-[var(--color-text)] opacity-80">Fiberglass pools offer several important advantages.</p>
-     </div>
-     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-      <div class="glass-effect rounded-2xl p-8 card-hover">
-       <div class="w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] flex items-center justify-center">
-        <svg class="w-7 h-7 text-[var(--color-background)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-       </div>
-       <h3 class="font-display text-xl font-semibold mb-3">Lower Maintenance</h3>
-       <p class="text-[var(--color-text)] opacity-70">The smooth gel-coat surface helps resist algae growth and reduces the amount of chemicals needed.</p>
-      </div>
-      <div class="glass-effect rounded-2xl p-8 card-hover">
-       <div class="w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] flex items-center justify-center">
-        <svg class="w-7 h-7 text-[var(--color-background)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-       </div>
-       <h3 class="font-display text-xl font-semibold mb-3">Long Lifespan</h3>
-       <p class="text-[var(--color-text)] opacity-70">Fiberglass pool shells are extremely durable and designed to last for decades.</p>
-      </div>
-      <div class="glass-effect rounded-2xl p-8 card-hover">
-       <div class="w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] flex items-center justify-center">
-        <svg class="w-7 h-7 text-[var(--color-background)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
-        </svg>
-       </div>
-       <h3 class="font-display text-xl font-semibold mb-3">Faster Installation</h3>
-       <p class="text-[var(--color-text)] opacity-70">Because fiberglass pools are pre-manufactured, installation can often be completed much faster than concrete pools.</p>
-      </div>
-      <div class="glass-effect rounded-2xl p-8 card-hover">
-       <div class="w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] flex items-center justify-center">
-        <svg class="w-7 h-7 text-[var(--color-background)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-       </div>
-       <h3 class="font-display text-xl font-semibold mb-3">Comfortable Surface</h3>
-       <p class="text-[var(--color-text)] opacity-70">Fiberglass has a smooth finish that is gentle on feet and skin.</p>
-      </div>
-      <div class="glass-effect rounded-2xl p-8 card-hover">
-       <div class="w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] flex items-center justify-center">
-        <svg class="w-7 h-7 text-[var(--color-background)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-        </svg>
-       </div>
-       <h3 class="font-display text-xl font-semibold mb-3">Energy Efficient</h3>
-       <p class="text-[var(--color-text)] opacity-70">The non-porous surface helps retain heat and can reduce heating costs.</p>
-      </div>
-      <div class="glass-effect rounded-2xl p-8 card-hover">
-       <div class="w-14 h-14 mb-6 rounded-xl bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-secondary)] flex items-center justify-center">
-        <svg class="w-7 h-7 text-[var(--color-background)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z" />
-        </svg>
-       </div>
-       <h3 class="font-display text-xl font-semibold mb-3">Cost Effective</h3>
-       <p class="text-[var(--color-text)] opacity-70">Our homeowner assisted program makes quality pools affordable for everyday families.</p>
-      </div>
-     </div>
-    </div>
-   </section><!-- Why Choose Us Section -->
-   <section class="py-20 lg:py-28">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="grid lg:grid-cols-2 gap-12 items-center">
-      <div>
-       <h2 class="font-display text-3xl sm:text-4xl font-bold mb-6">Why Choose Affordable Swimming Pools</h2>
-       <p class="text-lg text-[var(--color-text)] opacity-80 mb-8">Our goal is simple: Help homeowners build the backyard swimming pool they want without paying excessive contractor prices.</p>
-       <ul class="space-y-4">
-        <li class="flex items-start gap-4">
-         <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-primary)] bg-opacity-20 flex items-center justify-center mt-0.5">
-          <svg class="w-5 h-5 text-[var(--color-primary)]" fill="currentColor" viewbox="0 0 20 20">
-           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-         </div><span class="text-lg">Excavation expertise and site preparation experience</span></li>
-        <li class="flex items-start gap-4">
-         <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-primary)] bg-opacity-20 flex items-center justify-center mt-0.5">
-          <svg class="w-5 h-5 text-[var(--color-primary)]" fill="currentColor" viewbox="0 0 20 20">
-           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-         </div><span class="text-lg">Lower cost pool installation system</span></li>
-        <li class="flex items-start gap-4">
-         <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-primary)] bg-opacity-20 flex items-center justify-center mt-0.5">
-          <svg class="w-5 h-5 text-[var(--color-primary)]" fill="currentColor" viewbox="0 0 20 20">
-           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-         </div><span class="text-lg">Fiberglass pool specialists</span></li>
-        <li class="flex items-start gap-4">
-         <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-primary)] bg-opacity-20 flex items-center justify-center mt-0.5">
-          <svg class="w-5 h-5 text-[var(--color-primary)]" fill="currentColor" viewbox="0 0 20 20">
-           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-         </div><span class="text-lg">Homeowner assisted installation program</span></li>
-        <li class="flex items-start gap-4">
-         <div class="flex-shrink-0 w-8 h-8 rounded-full bg-[var(--color-primary)] bg-opacity-20 flex items-center justify-center mt-0.5">
-          <svg class="w-5 h-5 text-[var(--color-primary)]" fill="currentColor" viewbox="0 0 20 20">
-           <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
-          </svg>
-         </div><span class="text-lg">Professional guidance during key installation stages</span></li>
-       </ul>
-      </div>
-      <div class="relative">
-       <div class="glass-effect rounded-3xl p-8 lg:p-12">
-        <svg class="w-full max-w-md mx-auto" viewbox="0 0 300 220" fill="none"><!-- House silhouette --> <path d="M50 120 L150 60 L250 120 L250 180 L50 180 Z" fill="rgba(26,58,92,0.8)" stroke="#48cae4" stroke-width="2" /> <path d="M50 120 L150 60 L250 120" fill="none" stroke="#48cae4" stroke-width="3" /> <!-- Windows --> <rect x="80" y="130" width="30" height="30" fill="rgba(255,200,100,0.3)" stroke="#48cae4" /> <rect x="190" y="130" width="30" height="30" fill="rgba(255,200,100,0.3)" stroke="#48cae4" /> <!-- Door --> <rect x="135" y="140" width="30" height="40" fill="rgba(0,180,216,0.3)" stroke="#48cae4" stroke-width="2" /> <!-- Pool --> <ellipse cx="150" cy="200" rx="80" ry="25" fill="url(#whyPoolGrad)" /> <path d="M80 198 Q115 190 150 198 T220 198" stroke="rgba(255,255,255,0.4)" stroke-width="2" fill="none" /> <!-- Trees --> <circle cx="30" cy="140" r="20" fill="#0d5c3f" /> <rect x="27" y="155" width="6" height="25" fill="#4a3728" /> <circle cx="270" cy="135" r="18" fill="#0a7c4f" /> <rect x="267" y="148" width="6" height="22" fill="#4a3728" /> <!-- Sun --> <circle cx="260" cy="40" r="20" fill="#ffd166" /> <g stroke="#ffd166" stroke-width="2">
-          <line x1="260" y1="10" x2="260" y2="20" />
-          <line x1="290" y1="40" x2="280" y2="40" />
-          <line x1="260" y1="70" x2="260" y2="60" />
-          <line x1="230" y1="40" x2="240" y2="40" />
-          <line x1="281" y1="19" x2="274" y2="26" />
-          <line x1="281" y1="61" x2="274" y2="54" />
-         </g> <defs>
-          <lineargradient id="whyPoolGrad" x1="70" y1="200" x2="230" y2="200">
-           <stop offset="0%" stop-color="#00b4d8" />
-           <stop offset="50%" stop-color="#0096c7" />
-           <stop offset="100%" stop-color="#0077b6" />
-          </lineargradient>
-         </defs>
-        </svg>
-        <p class="text-center mt-6 text-lg font-medium text-[var(--color-secondary)]">Your Dream Backyard Awaits</p>
-       </div>
-      </div>
-     </div>
-    </div>
-   </section><!-- Contact Section -->
-   <section id="contact" class="py-20 lg:py-28 bg-[var(--color-surface)]">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="text-center mb-12">
-      <h2 id="contact-heading" class="font-display text-3xl sm:text-4xl font-bold mb-4">Request a Quote</h2>
-      <p class="text-lg text-[var(--color-text)] opacity-80">Interested in installing a fiberglass swimming pool while saving money? Contact us today to learn how our homeowner assisted pool installation program works.</p>
-     </div>
-     <form id="contact-form" class="glass-effect rounded-3xl p-8 lg:p-12">
-      <div class="grid sm:grid-cols-2 gap-6 mb-6">
-       <div><label for="name" class="block text-sm font-medium mb-2 text-[var(--color-secondary)]">Full Name</label> <input type="text" id="name" name="name" required class="w-full px-4 py-3 rounded-xl bg-[var(--color-background)] border border-[var(--color-primary)] border-opacity-30 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-opacity-20 transition-all outline-none text-[var(--color-text)]" placeholder="John Smith">
-       </div>
-       <div><label for="phone" class="block text-sm font-medium mb-2 text-[var(--color-secondary)]">Phone Number</label> <input type="tel" id="phone" name="phone" required class="w-full px-4 py-3 rounded-xl bg-[var(--color-background)] border border-[var(--color-primary)] border-opacity-30 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-opacity-20 transition-all outline-none text-[var(--color-text)]" placeholder="(555) 123-4567">
-       </div>
-      </div>
-      <div class="mb-6"><label for="email" class="block text-sm font-medium mb-2 text-[var(--color-secondary)]">Email Address</label> <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-xl bg-[var(--color-background)] border border-[var(--color-primary)] border-opacity-30 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-opacity-20 transition-all outline-none text-[var(--color-text)]" placeholder="john@example.com">
-      </div>
-      <div class="mb-6"><label for="address" class="block text-sm font-medium mb-2 text-[var(--color-secondary)]">Property Address</label> <input type="text" id="address" name="address" class="w-full px-4 py-3 rounded-xl bg-[var(--color-background)] border border-[var(--color-primary)] border-opacity-30 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-opacity-20 transition-all outline-none text-[var(--color-text)]" placeholder="123 Main St, City, State">
-      </div>
-      <div class="mb-8"><label for="message" class="block text-sm font-medium mb-2 text-[var(--color-secondary)]">Tell Us About Your Project</label> <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 rounded-xl bg-[var(--color-background)] border border-[var(--color-primary)] border-opacity-30 focus:border-[var(--color-primary)] focus:ring-2 focus:ring-[var(--color-primary)] focus:ring-opacity-20 transition-all outline-none text-[var(--color-text)] resize-none" placeholder="Describe your backyard, budget considerations, and any questions you have..."></textarea>
-      </div><button type="submit" id="submit-btn" class="w-full py-4 px-8 bg-[var(--color-primary)] hover:bg-[var(--color-secondary)] text-[var(--color-background)] font-semibold rounded-xl transition-all duration-300 hover:scale-[1.02] text-lg flex items-center justify-center gap-2"> <span>Get Started with a Consultation</span>
-       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-       </svg></button>
-      <p class="text-center mt-4 text-sm text-[var(--color-text)] opacity-60">We'll respond within 24 hours to discuss your backyard pool project.</p>
-     </form><!-- Success Message -->
-     <div id="success-message" class="hidden glass-effect rounded-3xl p-8 lg:p-12 text-center">
-      <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-[var(--color-primary)] bg-opacity-20 flex items-center justify-center">
-       <svg class="w-10 h-10 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewbox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-       </svg>
-      </div>
-      <h3 class="font-display text-2xl font-bold mb-4">Thank You!</h3>
-      <p class="text-lg text-[var(--color-text)] opacity-80">We've received your inquiry and will be in touch within 24 hours to discuss your pool project.</p>
-     </div>
-    </div>
-   </section><!-- Footer -->
-   <footer class="py-12 border-t border-[var(--color-primary)] border-opacity-20">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-     <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-      <div class="flex items-center gap-3">
-       <svg class="w-8 h-8 pool-svg" viewbox="0 0 48 48" fill="none"><ellipse cx="24" cy="28" rx="20" ry="12" fill="url(#footerPoolGrad)" /> <path d="M4 28c0-6.627 8.954-12 20-12s20 5.373 20 12" stroke="#48cae4" stroke-width="2" fill="none" /> <defs>
-         <lineargradient id="footerPoolGrad" x1="4" y1="28" x2="44" y2="28">
-          <stop offset="0%" stop-color="#00b4d8" />
-          <stop offset="100%" stop-color="#0077b6" />
-         </lineargradient>
-        </defs>
-       </svg><span id="footer-company" class="font-display text-lg font-semibold text-[var(--color-secondary)]">Affordable Swimming Pools</span>
-      </div>
-      <p class="text-sm text-[var(--color-text)] opacity-60">© <span id="year"></span> Affordable Swimming Pools. All rights reserved.</p>
-     </div>
-    </div>
-   </footer>
+</head>
+
+<body>
+
+<!-- Top Logo -->
+<div class="top-bar">
+  <a href="index.html">
+    <img id="navToggle" src="https://i.postimg.cc/TP3HtrM7/excavatorlogo.png"
+         alt="Affordable Enterprises LLC logo - Connecticut excavation and pool installation support"
+         class="logo">
+  </a>
+</div>
+
+<!-- Fullscreen Cover -->
+<div id="enterCover" class="enter-cover">
+  <div class="enter-box">
+    <h1>Welcome</h1>
+    <p>Press ENTER to explore DIY fiberglass pool installation</p>
+    <button id="enterButton" class="enter-btn">ENTER</button>
   </div>
-  <script>
-    // Set current year
-    document.getElementById('year').textContent = new Date().getFullYear();
+</div>
 
-    // Default configuration
-    const defaultConfig = {
-      company_name: 'Affordable Swimming Pools',
-      hero_tagline: 'Homeowner Assisted Fiberglass Pool Installation',
-      cta_button_text: 'Request a Quote',
-      contact_heading: 'Request a Quote',
-      background_color: '#0a1628',
-      surface_color: '#1a3a5c',
-      text_color: '#f0f7ff',
-      primary_color: '#00b4d8',
-      secondary_color: '#48cae4'
-    };
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const cover = document.getElementById("enterCover");
+    const button = document.getElementById("enterButton");
 
-    // Initialize Element SDK
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange: async (config) => {
-          // Update company name
-          const companyName = config.company_name || defaultConfig.company_name;
-          document.getElementById('nav-company').textContent = companyName;
-          document.getElementById('footer-company').textContent = companyName;
-          const heroTitle = document.getElementById('hero-title');
-          heroTitle.innerHTML = `<span style="color: var(--color-text)">${companyName.split(' ')[0]}</span><span style="color: var(--color-primary)"> ${companyName.split(' ').slice(1).join(' ')}</span>`;
-
-          // Update tagline
-          document.getElementById('hero-tagline').textContent = config.hero_tagline || defaultConfig.hero_tagline;
-
-          // Update CTA buttons
-          const ctaText = config.cta_button_text || defaultConfig.cta_button_text;
-          document.getElementById('nav-cta').textContent = ctaText.includes('Quote') ? 'Get a Quote' : ctaText;
-          document.getElementById('hero-cta').innerHTML = `${ctaText}<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>`;
-
-          // Update contact heading
-          document.getElementById('contact-heading').textContent = config.contact_heading || defaultConfig.contact_heading;
-
-          // Update colors
-          document.documentElement.style.setProperty('--color-background', config.background_color || defaultConfig.background_color);
-          document.documentElement.style.setProperty('--color-surface', config.surface_color || defaultConfig.surface_color);
-          document.documentElement.style.setProperty('--color-text', config.text_color || defaultConfig.text_color);
-          document.documentElement.style.setProperty('--color-primary', config.primary_color || defaultConfig.primary_color);
-          document.documentElement.style.setProperty('--color-secondary', config.secondary_color || defaultConfig.secondary_color);
-        },
-        mapToCapabilities: (config) => ({
-          recolorables: [
-            {
-              get: () => config.background_color || defaultConfig.background_color,
-              set: (value) => window.elementSdk.setConfig({ background_color: value })
-            },
-            {
-              get: () => config.surface_color || defaultConfig.surface_color,
-              set: (value) => window.elementSdk.setConfig({ surface_color: value })
-            },
-            {
-              get: () => config.text_color || defaultConfig.text_color,
-              set: (value) => window.elementSdk.setConfig({ text_color: value })
-            },
-            {
-              get: () => config.primary_color || defaultConfig.primary_color,
-              set: (value) => window.elementSdk.setConfig({ primary_color: value })
-            },
-            {
-              get: () => config.secondary_color || defaultConfig.secondary_color,
-              set: (value) => window.elementSdk.setConfig({ secondary_color: value })
-            }
-          ],
-          borderables: [],
-          fontEditable: undefined,
-          fontSizeable: undefined
-        }),
-        mapToEditPanelValues: (config) => new Map([
-          ['company_name', config.company_name || defaultConfig.company_name],
-          ['hero_tagline', config.hero_tagline || defaultConfig.hero_tagline],
-          ['cta_button_text', config.cta_button_text || defaultConfig.cta_button_text],
-          ['contact_heading', config.contact_heading || defaultConfig.contact_heading]
-        ])
-      });
-    }
-
-    // Form submission
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      // Hide form, show success
-      document.getElementById('contact-form').classList.add('hidden');
-      document.getElementById('success-message').classList.remove('hidden');
-      
-      // Scroll to success message
-      document.getElementById('success-message').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    button.addEventListener("click", () => {
+      cover.style.opacity = "0";
+      cover.style.pointerEvents = "none";
+      setTimeout(() => {
+        cover.style.display = "none";
+      }, 600);
     });
+  });
+</script>
 
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-      });
-    });
-  </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9d83d26b259ba5bb',t:'MTc3MjgyNTkxOS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<!-- Main Content -->
+<div class="pool-container">
+  <h1>DIY Fiberglass Swimming Pools</h1>
+  <p class="subtitle">Save thousands by installing your own fiberglass pool — with professional excavation support.</p>
+
+  <section class="content-section">
+    <h2>Why Choose a Fiberglass Pool?</h2>
+    <p>
+      Fiberglass pools are one of the most durable, low‑maintenance, and cost‑effective pool options available.
+      They arrive as a single molded shell, ready to be set into the ground — making them ideal for DIY installation
+      with the right excavation and site prep.
+    </p>
+  </section>
+
+  <section class="content-section">
+    <h2>The DIY Advantage</h2>
+    <ul>
+      <li>Save $10,000–$30,000 in labor costs</li>
+      <li>Much faster installation than concrete pools</li>
+      <li>No curing time — swim sooner</li>
+      <li>Smooth, non‑porous surface resists algae</li>
+      <li>Long‑lasting with minimal upkeep</li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2>What You Need to Get Started</h2>
+    <p>Installing a fiberglass pool is absolutely doable with the right tools and preparation. Most DIY installers use:</p>
+    <ul>
+      <li>Excavator or skid steer <strong>(we can help with this!)</strong></li>
+      <li>Crushed stone or gravel base</li>
+      <li>Laser level for perfect grading</li>
+      <li>Plumbing supplies for returns and skimmer</li>
+      <li>Backfill material</li>
+      <li>Basic hand tools</li>
+    </ul>
+  </section>
+
+  <section class="content-section">
+    <h2>Step‑by‑Step Installation Process</h2>
+    <ol>
+      <li><strong>Choose your fiberglass shell</strong> — size, shape, and features.</li>
+      <li><strong>Excavate the pool area</strong> — dig to manufacturer specifications.</li>
+      <li><strong>Set the gravel base</strong> — level and compact.</li>
+      <li><strong>Lower the pool shell</strong> — crane or equipment required.</li>
+      <li><strong>Level the shell</strong> — adjust until perfect.</li>
+      <li><strong>Plumb the system</strong> — returns, skimmer, pump.</li>
+      <li><strong>Backfill and fill with water</strong> — simultaneously for stability.</li>
+      <li><strong>Finish the patio</strong> — concrete, pavers, or decking.</li>
+    </ol>
+  </section>
+
+  <section class="content-section">
+    <h2>Need Help With the Heavy Lifting?</h2>
+    <p>
+      Affordable Enterprises LLC specializes in <strong>excavation, grading, and site prep</strong> — the hardest part of installing a fiberglass pool.
+      Whether you need the hole dug, the shell set, or the ground leveled, we handle the heavy equipment work so you can complete the DIY installation
+      and save thousands.
+    </p>
+  </section>
+
+  <section class="content-section">
+    <h2>Start Your DIY Pool Project Today</h2>
+    <p>
+      DIY doesn’t mean doing it alone. Contact us for excavation services, guidance, or help planning your fiberglass pool installation.
+      We make the process smooth, safe, and affordable.
+    </p>
+
+    <p>
+      📞 <strong><a href="tel:8603651092" style="color:#ffcc00;">(860) 365‑1092</a></strong><br>
+      📧 <strong><a href="mailto:affordableenterprise@yahoo.com" style="color:#ffcc00;">affordableenterprise@yahoo.com</a></strong>
+    </p>
+  </section>
+</div>
+
+<footer>
+  <p>&copy; 2026 Affordable Enterprises LLC | Excavation & DIY Pool Support in Connecticut</p>
+</footer>
+
+</body>
 </html>
